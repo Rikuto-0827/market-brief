@@ -138,6 +138,7 @@ footer b{color:#60a5fa}
      MARKET DATA  (scheduled task edits between START/END markers)
      ══════════════════════════════════════════ -->
 <script>
+<script>
 // ── START_DATA ──
 const MARKET_REPORTS = [
   {
@@ -173,60 +174,23 @@ const MARKET_REPORTS = [
     usCredit: {
       summary: "2026年6月、プライベートクレジット市場は「選別と革新」の局面へ。Q1に$140億超の解約請求が示す流動性懸念と、AI向け$35Bチップファイナンスが象徴する革新的活用が同時進行。Direct Lendingから資産担保型・スペシャルティファイナンスへの多様化が加速中。",
       deals: [
-        {
-          title: "Apollo × Blackstone：Anthropic AIコンピュート $35B チップファイナンス",
-          tag: "プライベートクレジット", tagCls: "t-blue",
-          meta: "Apollo Global + Blackstone Group ｜ $35B ｜ AIインフラ / テクノロジー",
-          body: "2026年6月8日クローズ。GoogleカスタムTPUをSPV経由で購入・Anthropicにリースする革新的スキーム。リース収入を返済原資とするAIインフラ向け史上最大級のPC案件。今後の業界標準モデルとなる可能性が高い。",
-          sig: "AIインフラ融資の新パラダイム"
-        },
-        {
-          title: "欧州ダイレクトレンディング 2025年 €590億で過去最高",
-          tag: "ファンド組成", tagCls: "t-orange",
-          meta: "複数大手マネジャー ｜ €590億（$690億）｜ 欧州DL",
-          body: "米国DL過熱を受け欧州に資金流入が急増。UK・DACH地域ミドルマーケット需要が旺盛で2026年も継続中。地理的分散投資の加速が顕著。欧州専門マネジャーへのLP集中が鮮明。",
-          sig: "地理的分散が加速する2026年"
-        },
-        {
-          title: "スペシャルティファイナンス 2025年 $370億で急成長",
-          tag: "スペシャルティ", tagCls: "t-purple",
-          meta: "複数マネジャー ｜ $370億（2025年累計）｜ 資産担保型クレジット",
-          body: "消費者ローン・航空機リース・ロイヤルティ等を対象。DLに次ぐ第2位の主要戦略に急浮上。ABF（資産担保型ファイナンス）は長期的にDLを凌駕する可能性も指摘されており注目。",
-          sig: "Direct Lendingの代替戦略として台頭"
-        }
+        { title:"Apollo × Blackstone：Anthropic AIコンピュート $35B チップファイナンス", tag:"プライベートクレジット", tagCls:"t-blue", meta:"Apollo Global + Blackstone Group ｜ $35B ｜ AIインフラ / テクノロジー", body:"2026年6月8日クローズ。GoogleカスタムTPUをSPV経由で購入・Anthropicにリースする革新的スキーム。リース収入を返済原資とするAIインフラ向け史上最大級のPC案件。今後の業界標準モデルとなる可能性が高い。", sig:"AIインフラ融資の新パラダイム" },
+        { title:"欧州ダイレクトレンディング 2025年 €590億で過去最高", tag:"ファンド組成", tagCls:"t-orange", meta:"複数大手マネジャー ｜ €590億（$690億）｜ 欧州DL", body:"米国DL過熱を受け欧州に資金流入が急増。UK・DACH地域ミドルマーケット需要が旺盛で2026年も継続中。地理的分散投資の加速が顕著。欧州専門マネジャーへのLP集中が鮮明。", sig:"地理的分散が加速する2026年" },
+        { title:"スペシャルティファイナンス 2025年 $370億で急成長", tag:"スペシャルティ", tagCls:"t-purple", meta:"複数マネジャー ｜ $370億（2025年累計）｜ 資産担保型クレジット", body:"消費者ローン・航空機リース・ロイヤルティ等を対象。DLに次ぐ第2位の主要戦略に急浮上。ABF（資産担保型ファイナンス）は長期的にDLを凌駕する可能性も指摘されており注目。", sig:"Direct Lendingの代替戦略として台頭" }
       ],
       outlook: "💡 プライベートクレジットはAIインフラ・資産担保型・クロスキャピタルへと活用範囲が急拡大。Q1の流動性懸念はバリュエーション精緻化への圧力として働き、より透明性の高い構造が模索される。2026年後半はスペシャルティ・ABFへの資金配分が一段と加速する見込み。"
     },
     jpCredit: {
       summary: "2026年5月のTOBルール改正（閾値1/3→30%）施行後、初の本格的な案件形成局面へ。バイアウトファンドへの資本集中と手法の多様化が同時進行。事業承継・カーブアウト・P2Pが主戦場であり、メザニン活用の標準化が進む。",
       deals: [
-        {
-          title: "Advantage Partners Japan Buyout Fund VIII — ¥300B Hard Cap達成",
-          tag: "バイアウト", tagCls: "t-orange",
-          meta: "Advantage Partners ｜ ¥300億（約$2.1B）｜ 日本バイアウト専門",
-          body: "2026年5月29日ファイナルクローズ。目標¥250億を超過しハードキャップ¥300億で終了。日本PE最大規模クラス。保険・年金・SWF等の機関投資家中心で前ファンドLPが大半。事業承継・カーブアウト・P2Pに注力。",
-          sig: "日本PE機関投資家需要の底堅さを証明"
-        },
-        {
-          title: "TOBルール改正（2026年5月1日施行）",
-          tag: "規制変更", tagCls: "t-red",
-          meta: "金融商品取引法改正 ｜ 強制TOB閾値 1/3 → 30% ｜ 全市場取引に適用",
-          body: "市場内取引を含む全株式取得にTOB規制が適用され、強制TOB閾値も30%へ引き下げ。プロセス設計（入札スケジュール・下限設定・MBO再出資枠組み）の精緻化が不可欠となり、法務・ファイナンシャルアドバイザリーの重要性が急上昇。",
-          sig: "バイアウトプロセス設計の巧拙が案件成否を左右"
-        },
-        {
-          title: "国内メザニンプロバイダーの台頭",
-          tag: "メザニン", tagCls: "t-purple",
-          meta: "MCo / MCP Partners / Fivestar Mezzanine / Topaz Capital等 ｜ 拡大中",
-          body: "シニアデット6x EBITDAの上乗せとして国内メザニンプロバイダーが急増。PE案件でのレバレッジ活用が多様化し、外資系プロバイダーとの競合も激化。大型バイアウトファイナンスの選択肢が格段に拡大中。",
-          sig: "日本レバレッジドファイナンスの急速な成熟"
-        }
+        { title:"Advantage Partners Japan Buyout Fund VIII — ¥300B Hard Cap達成", tag:"バイアウト", tagCls:"t-orange", meta:"Advantage Partners ｜ ¥300億（約$2.1B）｜ 日本バイアウト専門", body:"2026年5月29日ファイナルクローズ。目標¥250億を超過しハードキャップ¥300億で終了。日本PE最大規模クラス。保険・年金・SWF等の機関投資家中心で前ファンドLPが大半。事業承継・カーブアウト・P2Pに注力。", sig:"日本PE機関投資家需要の底堅さを証明" },
+        { title:"TOBルール改正（2026年5月1日施行）", tag:"規制変更", tagCls:"t-red", meta:"金融商品取引法改正 ｜ 強制TOB閾値 1/3 → 30% ｜ 全市場取引に適用", body:"市場内取引を含む全株式取得にTOB規制が適用され、強制TOB閾値も30%へ引き下げ。プロセス設計（入札スケジュール・下限設定・MBO再出資枠組み）の精緻化が不可欠となり、法務・ファイナンシャルアドバイザリーの重要性が急上昇。", sig:"バイアウトプロセス設計の巧拙が案件成否を左右" },
+        { title:"国内メザニンプロバイダーの台頭", tag:"メザニン", tagCls:"t-purple", meta:"MCo / MCP Partners / Fivestar Mezzanine / Topaz Capital等 ｜ 拡大中", body:"シニアデット6x EBITDAの上乗せとして国内メザニンプロバイダーが急増。PE案件でのレバレッジ活用が多様化し、外資系プロバイダーとの競合も激化。大型バイアウトファイナンスの選択肢が格段に拡大中。", sig:"日本レバレッジドファイナンスの急速な成熟" }
       ],
       outlook: "💡 コーポレートガバナンス改革・事業承継需要を背景に、国内外PEの投資余力は拡大継続。TOB改正後初の大型P2P案件の登場に注目。メザニン活用の標準化とプロセス設計の精緻化が競争優位を左右する2026年後半へ。"
     },
-    takeaway: "本日はMicronの爆発決算（+17.1%）がAI半導体需要の底堅さを改めて証明し、市場全体をリスクオンへ牽引。ただしPCE 4.1%（2023年4月以来の高水準）はFedの利下げ期待を冷やし、10Y金利は高止まり（~4.4%）。Private Market観点では、Apollo×Blackstoneの$35B AIチップファイナンスが示す通りプライベートクレジットはAIインフラという全く新しい資本需要源を取り込みつつある。日本ではTOBルール改正後の初の本格局面入り。Advantage Partners Fund VIIIの超過申込クローズが示す通り機関投資家の需要は依然旺盛。今後の注目テーマ：①AI半導体サプライチェーン全体への資本拡大、②日本P2P大型案件の登場、③プライベートクレジットの流動性条件・バリュエーション透明性の再設定。"
-  }
-  ,
+    takeaway: "本日はMicronの爆発決算（+17.1%）がAI半導体需要の底堅さを改めて証明し、市場全体をリスクオンへ牽引。ただしPCE 4.1%（2023年4月以来の高水準）はFedの利下げ期待を冷やし、10Y金利は高止まり（~4.4%）。Private Market観点では、Apollo×Blackstoneの$35B AIチップファイナンスが示す通りプライベートクレジットはAIインフラという全く新しい資本需要源を取り込みつつある。日本ではTOBルール改正後の初の本格局面入り。Advantage Partners Fund VIIIの超過申込クローズが示す通り機関投資家の需要は依然旺盛。"
+  },
   {
     date: "2026-06-29",
     dateLabel: "Jun 29",
@@ -245,12 +209,12 @@ const MARKET_REPORTS = [
       "Gold金":     { value:"~$3,275",  dir:"up"   }
     },
     movers: [
-      { ticker:"ILLR",  name:"Triller Group",    pct: 64.9, dir:"up",   why:"SpaceX株式を財務資産として取得。NasdaqからSpaceXへの間接エクスポージャーとして急騰" },
-      { ticker:"NVDA",  name:"NVIDIA",           pct: -3.2, dir:"down", why:"AIチップ株5日連続安。半導体セクター全体に売り圧力継続" },
-      { ticker:"AMD",   name:"AMD",              pct: -4.1, dir:"down", why:"Nasdaq技術株売りに連動。AI半導体バリュエーション懸念" },
-      { ticker:"TSMC",  name:"TSMC ADR",         pct: -2.8, dir:"down", why:"地政学リスク再燃・半導体全体の調整局面" },
-      { ticker:"OMER",  name:"Omeros Corp",      pct:-23.0, dir:"down", why:"欧州でのNarsoplimab医薬品承認申請に関する否定的規制アップデート" },
-      { ticker:"MSFT",  name:"Microsoft",        pct: -1.4, dir:"down", why:"OpenAI IPO遅延報道でAI投資への懸念台頭、テック全体に波及" }
+      { ticker:"ILLR", name:"Triller Group",  pct: 64.9, dir:"up",   why:"SpaceX株式を財務資産として取得。NasdaqからSpaceXへの間接エクスポージャーとして急騰" },
+      { ticker:"NVDA", name:"NVIDIA",         pct: -3.2, dir:"down", why:"AIチップ株5日連続安。半導体セクター全体に売り圧力継続" },
+      { ticker:"AMD",  name:"AMD",            pct: -4.1, dir:"down", why:"Nasdaq技術株売りに連動。AI半導体バリュエーション懸念" },
+      { ticker:"TSMC", name:"TSMC ADR",       pct: -2.8, dir:"down", why:"地政学リスク再燃・半導体全体の調整局面" },
+      { ticker:"OMER", name:"Omeros Corp",    pct:-23.0, dir:"down", why:"欧州でのNarsoplimab医薬品承認申請に関する否定的規制アップデート" },
+      { ticker:"MSFT", name:"Microsoft",      pct: -1.4, dir:"down", why:"OpenAI IPO遅延報道でAI投資への懸念台頭、テック全体に波及" }
     ],
     events: [
       { icon:"🤖", title:"OpenAI IPO延期報道 — SpaceX上場不振が影響", detail:"OpenAIが2026年内IPOを来年以降に延期する可能性を検討中と報道。SpaceX上場後の株価低迷とAI関連株のボラティリティ上昇が背景。Microsoftなど主要AI投資家株に売り圧力。" },
@@ -260,55 +224,256 @@ const MARKET_REPORTS = [
     usCredit: {
       summary: "2026年6月末時点、プライベートクレジット市場は$1.5〜2兆規模に拡大し、広義シンジケートローン市場と並ぶ規模に到達。Direct Lendingが全体の52%を占める。Q1の$100億超解約申請が示す流動性懸念と、AI・ABF活用による成長機会が並立する「選別の時代」へ。",
       deals: [
-        {
-          title: "Ares Management：プライベートクレジット成長と成熟の2026年見通し",
-          tag: "マーケット見通し", tagCls: "t-blue",
-          meta: "Ares Management ｜ マーケットレポート ｜ Direct Lending / ABF",
-          body: "規制緩和・法人税優遇・地銀貸出制約がDirectLendingの追い風として継続。M&A再開期待によるディールフロー増加・スプレッド改善を予測。ABF（航空機・消費者ローン・ロイヤルティ）がDLに次ぐ第2位戦略として台頭。",
-          sig: "2028年までに市場規模$3兆到達予測"
-        },
-        {
-          title: "PineBridge：直接融資の4つの追い風 — 2026年後半見通し",
-          tag: "ダイレクトレンディング", tagCls: "t-purple",
-          meta: "PineBridge Investments ｜ アウトルックレポート ｜ 中堅企業向けDL",
-          body: "①規制・税制の事業拡大支援、②低金利環境、③地銀制約、④M&A回復という4追い風を提示。スプレッド縮小圧力は継続するも、オリジネーション能力と案件選別力のある大手マネジャーへ資金集中が進む。",
-          sig: "選別力が差別化要因となる後半戦"
-        },
-        {
-          title: "Northleaf Capital：Q1-2026プライベートクレジット市場アップデート",
-          tag: "四半期レポート", tagCls: "t-green",
-          meta: "Northleaf Capital Partners ｜ Q1 2026 ｜ プライベートクレジット全般",
-          body: "Q1はエバーグリーンファンドの流動性懸念が浮上した一方、機関投資家向けクローズドエンドファンドへの資金流入は安定。バリュエーション精緻化・透明性向上への要求が高まり、ポートフォリオ報告品質が競争差別化要素として重要性増大。",
-          sig: "機関投資家は透明性・流動性管理を重視"
-        }
+        { title:"Ares Management：プライベートクレジット成長と成熟の2026年見通し", tag:"マーケット見通し", tagCls:"t-blue", meta:"Ares Management ｜ マーケットレポート ｜ Direct Lending / ABF", body:"規制緩和・法人税優遇・地銀貸出制約がDirectLendingの追い風として継続。M&A再開期待によるディールフロー増加・スプレッド改善を予測。ABF（航空機・消費者ローン・ロイヤルティ）がDLに次ぐ第2位戦略として台頭。", sig:"2028年までに市場規模$3兆到達予測" },
+        { title:"PineBridge：直接融資の4つの追い風 — 2026年後半見通し", tag:"ダイレクトレンディング", tagCls:"t-purple", meta:"PineBridge Investments ｜ アウトルックレポート ｜ 中堅企業向けDL", body:"①規制・税制の事業拡大支援、②低金利環境、③地銀制約、④M&A回復という4追い風を提示。スプレッド縮小圧力は継続するも、オリジネーション能力と案件選別力のある大手マネジャーへ資金集中が進む。", sig:"選別力が差別化要因となる後半戦" },
+        { title:"Northleaf Capital：Q1-2026プライベートクレジット市場アップデート", tag:"四半期レポート", tagCls:"t-green", meta:"Northleaf Capital Partners ｜ Q1 2026 ｜ プライベートクレジット全般", body:"Q1はエバーグリーンファンドの流動性懸念が浮上した一方、機関投資家向けクローズドエンドファンドへの資金流入は安定。バリュエーション精緻化・透明性向上への要求が高まり、ポートフォリオ報告品質が競争差別化要素として重要性増大。", sig:"機関投資家は透明性・流動性管理を重視" }
       ],
       outlook: "💡 2026年後半のプライベートクレジットは大手マネジャーへの集中と中小マネジャーの差別化が鮮明に。ABFとスペシャルティファイナンスへの資金シフトが加速し、Direct Lendingスプレッドは緩やかに縮小。AI・テックセクターへの融資機会は拡大するも、バリュエーション精緻化と流動性条件の厳格化が不可欠。"
     },
     jpCredit: {
       summary: "2026年6月、日本PEは「量から質」へのシフトが鮮明。Advantage Partners Fund VIII（¥3,000億）超過申込クローズが示す通り機関投資家需要は依然旺盛。TOBルール改正（5月施行）後の初の本格案件形成局面へ。外資系PEの日本オフィス開設・投資拡大も継続加速。",
       deals: [
-        {
-          title: "Bain Capital主導：外資系PEの日本バイアウト第三波",
-          tag: "バイアウト", tagCls: "t-orange",
-          meta: "Bain Capital / 外資PE複数社 ｜ 大型バイアウト ｜ 日本企業カーブアウト・P2P",
-          body: "コーポレートガバナンス改革を追い風にBain Capitalが日本バイアウト市場でリード。KKR・Carlyle・Apollo等外資勢が日本専任チームを拡充しパイプラインを積み上げ中。TOBルール改正後のP2P案件（非公開化）が2026年後半の主テーマに。",
-          sig: "外資PE第三波：規律あるコーポレートアクション増加へ"
-        },
-        {
-          title: "事業承継PE：後継者不在$1.6兆市場をターゲット",
-          tag: "事業承継", tagCls: "t-blue",
-          meta: "国内PE複数社 ｜ 中小企業事業承継 ｜ ミドルマーケット",
-          body: "後継者不在の中小企業$1.6兆（推計）市場へのPE参入が加速。地方銀行との協調案件・地域密着型バイアウトが増加。事業承継補助金・税制優遇との組み合わせで案件成立率が向上。地域産業の高付加価値化・再生における重要プレイヤーとして認知拡大中。",
-          sig: "地方銀行との協調融資モデルが事業承継PEの標準に"
-        },
-        {
-          title: "日本レバレッジドファイナンス：メザニン標準化が急進展",
-          tag: "メザニン", tagCls: "t-purple",
-          meta: "MCo / MCP Partners / Fivestar Mezzanine等 ｜ ¥50〜200億 / 案件",
-          body: "シニアデット6x EBITDAの上乗せとして国内メザニンプロバイダーが急増。2026年は大型バイアウトでのメザニン活用が標準化し、総デットマルチプル7〜8xの案件も登場。外資系プロバイダー（Barclays・Goldman等）との競合激化でコスト低下と条件改善が進む。",
-          sig: "日本LBOファイナンスの成熟が加速"
-        }
+        { title:"Bain Capital主導：外資系PEの日本バイアウト第三波", tag:"バイアウト", tagCls:"t-orange", meta:"Bain Capital / 外資PE複数社 ｜ 大型バイアウト ｜ 日本企業カーブアウト・P2P", body:"コーポレートガバナンス改革を追い風にBain Capitalが日本バイアウト市場でリード。KKR・Carlyle・Apollo等外資勢が日本専任チームを拡充しパイプラインを積み上げ中。TOBルール改正後のP2P案件（非公開化）が2026年後半の主テーマに。", sig:"外資PE第三波：規律あるコーポレートアクション増加へ" },
+        { title:"事業承継PE：後継者不在$1.6兆市場をターゲット", tag:"事業承継", tagCls:"t-blue", meta:"国内PE複数社 ｜ 中小企業事業承継 ｜ ミドルマーケット", body:"後継者不在の中小企業$1.6兆（推計）市場へのPE参入が加速。地方銀行との協調案件・地域密着型バイアウトが増加。事業承継補助金・税制優遇との組み合わせで案件成立率が向上。地域産業の高付加価値化・再生における重要プレイヤーとして認知拡大中。", sig:"地方銀行との協調融資モデルが事業承継PEの標準に" },
+        { title:"日本レバレッジドファイナンス：メザニン標準化が急進展", tag:"メザニン", tagCls:"t-purple", meta:"MCo / MCP Partners / Fivestar Mezzanine等 ｜ ¥50〜200億 / 案件", body:"シニアデット6x EBITDAの上乗せとして国内メザニンプロバイダーが急増。2026年は大型バイアウトでのメザニン活用が標準化し、総デットマルチプル7〜8xの案件も登場。外資系プロバイダー（Barclays・Goldman等）との競合激化でコスト低下と条件改善が進む。", sig:"日本LBOファイナンスの成熟が加速" }
       ],
       outlook: "💡 2026年後半の日本PEはTOBルール改正後初の大型P2P案件登場に注目。外資・国内双方でのファンドレイズ好調、事業承継・カーブアウト・ガバナンス改革を軸にディールフロー拡大が見込まれる。メザニン活用標準化とプロセス設計の精緻化が投資リターン格差を生む重要局面へ。"
     },
-    takeaway: "本日（6/29月曜）は、OpenAI IPO延期報道とAIチップ株5日連続安を背景にNasdaqが-1.4%と続落。半導体セクターから防衛的セクターへの資金ローテーションが継続し、VIXは21台へ上昇。一方でプライベートクレジット市場は$1.5〜2兆規模に拡大し、広義シンジケートローン市場
+    takeaway: "本日（6/29月曜）は、OpenAI IPO延期報道とAIチップ株5日連続安を背景にNasdaqが-1.4%と続落。半導体セクターから防衛的セクターへの資金ローテーションが継続し、VIXは21台へ上昇。一方でプライベートクレジット市場は$1.5〜2兆規模に拡大し、広義シンジケートローン市場と並ぶ巨大市場に成長。日本PEはAdvantage Partners Fund VIII超過申込クローズに続き、外資PE第三波が本格化。TOBルール改正後の初P2P案件登場が2026年後半の最大注目テーマとなる見込み。"
+  }
+];
+// ── END_DATA ──
+</script>
+
+<!-- ══ APP LOGIC ══ -->
+<script>
+(function(){
+  const charts = {};
+
+  function pct(p){ return (p>0?'+':'')+p.toFixed(2)+'%'; }
+  function arrow(d){ return d==='up'?'▲':d==='down'?'▼':'—'; }
+  function cls(d){ return d==='up'?'up':d==='down'?'down':'flat'; }
+
+  /* ── Build Tabs ── */
+  function buildTabs(){
+    const nav = document.getElementById('tab-nav-inner');
+    const sorted = [...MARKET_REPORTS].sort((a,b)=>b.date.localeCompare(a.date));
+    sorted.forEach((r,i)=>{
+      const d = new Date(r.date+'T12:00:00');
+      const btn = document.createElement('button');
+      btn.className='tab-btn'+(i===0?' active':'');
+      btn.dataset.date=r.date;
+      btn.innerHTML=`${d.toLocaleDateString('en-US',{month:'short',day:'numeric'})}<span class="dow">${d.toLocaleDateString('en-US',{weekday:'short'})}</span>`;
+      btn.onclick=()=>activate(r.date);
+      nav.appendChild(btn);
+    });
+  }
+
+  function activate(date){
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.date===date));
+    document.querySelectorAll('.report-panel').forEach(p=>p.classList.toggle('active',p.dataset.date===date));
+    if(!charts[date]) setTimeout(()=>renderCharts(date),50);
+  }
+
+  /* ── Build All Panels ── */
+  function buildPanels(){
+    const main=document.getElementById('main-content');
+    const sorted=[...MARKET_REPORTS].sort((a,b)=>b.date.localeCompare(a.date));
+    sorted.forEach((r,i)=>{
+      const div=document.createElement('div');
+      div.className='report-panel'+(i===0?' active':'');
+      div.dataset.date=r.date;
+      div.innerHTML=html(r);
+      main.appendChild(div);
+    });
+  }
+
+  function html(r){
+    /* Index cards */
+    const idxHtml=Object.values(r.indices).map(x=>`
+      <div class="idx-card ${cls(x.dir)}">
+        <div class="idx-name">${x.flag} ${x.name}</div>
+        <div class="idx-val">${x.value.toLocaleString('en-US',{minimumFractionDigits:1,maximumFractionDigits:1})}</div>
+        <div class="idx-chg c-${cls(x.dir)}">${arrow(x.dir)} ${pct(x.pct)}&ensp;(${x.change>0?'+':''}${x.change.toFixed(1)})</div>
+      </div>`).join('');
+
+    /* Macro */
+    const macroHtml=Object.entries(r.macro).map(([k,v])=>`
+      <div class="macro-item">
+        <span class="macro-lbl">${k}</span>
+        <span class="macro-val ${v.dir==='up'?'up':v.dir==='down'?'down':''}">${v.value}</span>
+      </div>`).join('');
+
+    /* Movers list */
+    const moversHtml=r.movers.map(m=>`
+      <div class="mover-row">
+        <div class="mover-ticker">${m.ticker}</div>
+        <div class="mover-info">
+          <div class="mover-name">${m.name}</div>
+          <div class="mover-why">${m.why}</div>
+        </div>
+        <div class="mover-pct ${m.dir==='up'?'up':'down'}">${arrow(m.dir)}${Math.abs(m.pct).toFixed(1)}%</div>
+      </div>`).join('');
+
+    /* Events */
+    const evHtml=r.events.map(e=>`
+      <div class="ev-item">
+        <div class="ev-title">${e.icon}&ensp;${e.title}</div>
+        <div class="ev-detail">${e.detail}</div>
+      </div>`).join('');
+
+    /* US deals */
+    const usDeals=r.usCredit.deals.map(d=>`
+      <div class="deal">
+        <div class="deal-tag ${d.tagCls}">${d.tag}</div>
+        <div class="deal-ttl">${d.title}</div>
+        <div class="deal-meta">${d.meta}</div>
+        <div class="deal-body">${d.body}</div>
+        <div class="deal-sig">${d.sig}</div>
+      </div>`).join('');
+
+    /* JP deals */
+    const jpDeals=r.jpCredit.deals.map(d=>`
+      <div class="deal">
+        <div class="deal-tag ${d.tagCls}">${d.tag}</div>
+        <div class="deal-ttl">${d.title}</div>
+        <div class="deal-meta">${d.meta}</div>
+        <div class="deal-body">${d.body}</div>
+        <div class="deal-sig">${d.sig}</div>
+      </div>`).join('');
+
+    /* Historical data for this date's charts */
+    const sorted=[...MARKET_REPORTS].sort((a,b)=>a.date.localeCompare(b.date));
+    const hLabels=JSON.stringify(sorted.map(x=>x.dateLabel));
+    const hSP=JSON.stringify(sorted.map(x=>x.indices.sp500.pct));
+    const hNQ=JSON.stringify(sorted.map(x=>x.indices.nasdaq.pct));
+    const hDow=JSON.stringify(sorted.map(x=>x.indices.dow.pct));
+    const mData=JSON.stringify(r.movers);
+
+    return `
+    <div class="section">
+      <div class="sec-title">📊 主要指数 / Major Indices</div>
+      <div class="idx-grid">${idxHtml}</div>
+    </div>
+
+    <div class="section">
+      <div class="two-col">
+        <div class="card">
+          <div class="card-title">📈 指数トレンド（日次変動率%）</div>
+          <div class="chart-wrap"><canvas id="tc-${r.date}"></canvas></div>
+        </div>
+        <div class="card">
+          <div class="card-title">🌐 マクロ指標</div>
+          <div class="macro-grid">${macroHtml}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="movers-card">
+        <div class="card-title">🔥 プレマーケット注目銘柄 / Pre-Market Movers</div>
+        <div class="movers-layout">
+          <div class="chart-wrap" style="height:220px"><canvas id="mc-${r.date}"></canvas></div>
+          <div>${moversHtml}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">📅 本日の注目イベント</div>
+      <div class="events-list">${evHtml}</div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">💼 US プライベートクレジット &amp; PE</div>
+      <div class="pc-box us-box">
+        <div class="pc-hdr"><span class="pc-flag">🇺🇸</span>
+          <div><div class="pc-name">US Private Credit &amp; PE</div>
+          <div class="pc-sub">Direct Lending / Specialty Finance / AI Infrastructure</div></div>
+        </div>
+        <div class="pc-summary">${r.usCredit.summary}</div>
+        <div class="deals-grid">${usDeals}</div>
+        <div class="pc-outlook">${r.usCredit.outlook}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="sec-title">🗾 Japan プライベートクレジット &amp; PE</div>
+      <div class="pc-box jp-box">
+        <div class="pc-hdr"><span class="pc-flag">🇯🇵</span>
+          <div><div class="pc-name">Japan Private Credit &amp; PE</div>
+          <div class="pc-sub">バイアウト / メザニン / TOBストラクチャリング</div></div>
+        </div>
+        <div class="pc-summary">${r.jpCredit.summary}</div>
+        <div class="deals-grid">${jpDeals}</div>
+        <div class="pc-outlook">${r.jpCredit.outlook}</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="takeaway">
+        <div class="takeaway-lbl">💡 Today's Takeaway</div>
+        <div class="takeaway-txt">${r.takeaway}</div>
+      </div>
+    </div>
+
+    <script>
+      window.__cd=window.__cd||{};
+      window.__cd['${r.date}']={hl:${hLabels},sp:${hSP},nq:${hNQ},dw:${hDow},mv:${mData}};
+    <\/script>`;
+  }
+
+  /* ── Charts ── */
+  function renderCharts(date){
+    charts[date]=1;
+    const d=window.__cd&&window.__cd[date];
+    if(!d)return;
+
+    /* Trend */
+    const tc=document.getElementById('tc-'+date);
+    if(tc) new Chart(tc,{type:'line',data:{
+      labels:d.hl,
+      datasets:[
+        {label:'S&P 500', data:d.sp,borderColor:'#3b82f6',backgroundColor:'rgba(59,130,246,.08)',tension:.4,pointRadius:5,pointHoverRadius:7},
+        {label:'Nasdaq',  data:d.nq,borderColor:'#8b5cf6',backgroundColor:'rgba(139,92,246,.08)',tension:.4,pointRadius:5,pointHoverRadius:7},
+        {label:'Dow',     data:d.dw,borderColor:'#10b981',backgroundColor:'rgba(16,185,129,.08)',tension:.4,pointRadius:5,pointHoverRadius:7}
+      ]
+    },options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{labels:{font:{size:11},boxWidth:12,padding:12}}},
+      scales:{
+        y:{ticks:{callback:v=>v+'%',font:{size:11}},grid:{color:'#f1f5f9'}},
+        x:{ticks:{font:{size:11}},grid:{display:false}}
+      }
+    }});
+
+    /* Movers bar */
+    const mc=document.getElementById('mc-'+date);
+    if(mc&&d.mv){
+      const sorted=[...d.mv].sort((a,b)=>a.pct-b.pct);
+      new Chart(mc,{type:'bar',data:{
+        labels:sorted.map(m=>m.ticker),
+        datasets:[{
+          data:sorted.map(m=>m.pct),
+          backgroundColor:sorted.map(m=>m.dir==='up'?'rgba(16,185,129,.75)':'rgba(239,68,68,.75)'),
+          borderColor:sorted.map(m=>m.dir==='up'?'#10b981':'#ef4444'),
+          borderWidth:1,borderRadius:5
+        }]
+      },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,
+        plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toFixed(1)+'%'}}},
+        scales:{
+          x:{ticks:{callback:v=>v+'%',font:{size:11}},grid:{color:'#f1f5f9'}},
+          y:{ticks:{font:{size:11,weight:'700'}},grid:{display:false}}
+        }
+      }});
+    }
+  }
+
+  /* ── Init ── */
+  buildTabs();
+  buildPanels();
+  const latest=[...MARKET_REPORTS].sort((a,b)=>b.date.localeCompare(a.date))[0].date;
+  setTimeout(()=>renderCharts(latest),100);
+})();
+</script>
+</body>
+</html>
