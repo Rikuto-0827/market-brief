@@ -239,6 +239,57 @@ const MARKET_REPORTS = [
       outlook: "💡 TOBルール改正後初の大型P2P案件登場に注目。メザニン活用標準化とプロセス設計の精緻化が投資リターン格差を生む重要局面へ。"
     },
     takeaway: "本日（6/29月曜）は、OpenAI IPO延期報道とAIチップ株5日連続安を背景にNasdaqが-1.4%と続落。半導体セクターから防衛的セクターへの資金ローテーションが継続し、VIXは21台へ上昇。プライベートクレジット市場は$1.5〜2兆規模に拡大し広義シンジケートローン市場と並ぶ巨大市場に成長。日本PEは外資PE第三波が本格化し、TOBルール改正後の初P2P案件登場が2026年後半の最大注目テーマ。"
+  },
+  {
+    date: "2026-06-30",
+    dateLabel: "Jun 30",
+    indices: {
+      sp500:  { name:"S&P 500",    flag:"🇺🇸", value:7449.4,  change:58.4,   pct:0.79,  dir:"up" },
+      nasdaq: { name:"Nasdaq 100", flag:"🇺🇸", value:25190.0, change:249.9,  pct:1.00,  dir:"up" },
+      dow:    { name:"Dow Jones",  flag:"🇺🇸", value:52319.2, change:604.2,  pct:1.17,  dir:"up" },
+      nikkei: { name:"Nikkei 225", flag:"🇯🇵", value:70498.0, change:1030.0, pct:1.48,  dir:"up" }
+    },
+    macro: {
+      "10Y米国債":  { value:"4.39%",   dir:"up"   },
+      "2Y米国債":   { value:"4.07%",   dir:"up"   },
+      "VIX":        { value:"17.65",   dir:"down" },
+      "DXY":        { value:"~102",    dir:"up"   },
+      "WTI原油":    { value:"~$70.3",  dir:"down" },
+      "Gold金":     { value:"~$4,020", dir:"down" }
+    },
+    movers: [
+      { ticker:"CNXC", name:"Concentrix",           pct:-22.0, dir:"down", why:"Q2決算ミス・Q3および通期ガイダンスを大幅下方修正" },
+      { ticker:"NSC",  name:"Norfolk Southern",     pct: -8.4, dir:"down", why:"業績見通し悪化、鉄道輸送量の減少懸念が継続" },
+      { ticker:"DLR",  name:"Digital Realty Trust", pct: -4.2, dir:"down", why:"データセンター需要の短期鈍化懸念、テック株調整に連動" },
+      { ticker:"NKE",  name:"Nike",                 pct:  0.3, dir:"up",   why:"引け後決算発表前に積極買い。11年ぶり安値付近からの反発期待" },
+      { ticker:"SMH",  name:"VanEck Semiconductor", pct:  0.82,dir:"up",   why:"半導体セクター全体の反発。前日の売られ過ぎからショートカバー" },
+      { ticker:"MAGS", name:"Roundhill Mag7 ETF",   pct:  0.25,dir:"up",   why:"メガキャップテック回復基調。Q2末ポートフォリオリバランス" }
+    ],
+    events: [
+      { icon:"🏆", title:"Q2 2026終了 — 主要株価指数が2020年以来最良の四半期", detail:"S&P 500・Dow Jones・Nasdaqの全主要指数が2020年パンデミック回復以来最高の四半期パフォーマンスを記録。Dow Jonesは史上初めて52,000台を突破。年前半の強い企業業績とAIブームが牽引。" },
+      { icon:"👟", title:"Nike (NKE) 引け後決算発表 — 11年ぶり安値からの反発に注目", detail:"株価は11年ぶりの安値付近で推移。中国市場回復・コスト削減効果・DTC（Direct-to-Consumer）戦略の成果が焦点。決算結果次第では短期的な大幅変動も想定される。" },
+      { icon:"📋", title:"JOLTS（雇用動態調査）— 予想を大幅上回る求人件数", detail:"6月の求人件数が市場予想を大幅に上回り、米国債利回りが上昇（10Y: 4.39%）。Fed利下げ期待をさらに後退させ「higher for longer」シナリオが継続。Goldはこの四半期で14%下落し2013年以来最悪の四半期に。" },
+      { icon:"🏦", title:"Fed ウォーシュ議長、バランスシート縮小タスクフォース創設を発表", detail:"FRB議長ウォーシュが大型バランスシートの必要性を評価するタスクフォースの創設を発表。国債売却（QT加速）のシグナルとして市場は受け止め、長期金利に上昇圧力が続く。" }
+    ],
+    usCredit: {
+      summary: "2026年Q2末、US Private Credit市場はエバーグリーン型ファンドからの解約請求（Q1: $100億超）と大手マネジャーによる大型ファンドレイズが並行進行。確立されたマネジャーへの資金集中が鮮明で、CarlyleとBrookfieldが大型調達を主導。",
+      deals: [
+        { title:"Carlyle：北米バイアウト次期ファンド — $85億アンカーファイナンス確保", tag:"バイアウト", tagCls:"t-blue", meta:"Carlyle Group ｜ $8.5B ｜ 北米ミドルマーケット・バイアウト", body:"正式なLP向けファンドレイズ前に$85億のファイナンスアレンジメントをアンカーとして確保。前ファンド比の超過申込を背景にLP需要は依然旺盛。2026年後半に正式クローズへ向けた動き。", sig:"確立マネジャーへの資金集中が一段と加速" },
+        { title:"Brookfield：$200億プライベートクレジットファンド — Q3初回クローズ目標", tag:"ファンドレイズ", tagCls:"t-orange", meta:"Brookfield Asset Management ｜ $20B ｜ プライベートクレジット", body:"前ファンド（$300億クローズ）の後継として$200億を目標とした新ファンドのQ3初回クローズを計画。インフラ・再エネ関連のSpecialty Financeが中心戦略。", sig:"大型マネジャーが示す市場成長への確信" },
+        { title:"エバーグリーン型DLファンド：Q1に$100億超の解約請求", tag:"流動性リスク", tagCls:"t-red", meta:"複数大手マネジャー ｜ $10B超 ｜ エバーグリーン型ダイレクトレンディング", body:"Q1 2026にエバーグリーン型ダイレクトレンディング戦略から$100億超の解約請求が発生。PIKトグル利用増・高プロファイルデフォルトを背景に投資家が流動性を優先。解約制限の導入マネジャーも増加。", sig:"クローズドエンドvsエバーグリーン：構造選択が評価基準に" }
+      ],
+      outlook: "💡 2026年後半はABF（資産担保型ファイナンス）とSpecialty Financeへの資金シフトが加速。大手マネジャーへの集中と中小マネジャーの差別化が鮮明になる局面へ。"
+    },
+    jpCredit: {
+      summary: "2026年6月末、日本PE市場は外資PE第三波の本格化とFEFTA初適用（MBK×牧野フライス）という歴史的事案が重なる節目。年間ディールバリューは5年連続で3兆円超を記録し、テイクプライベート案件が全体の約半数を占める。",
+      deals: [
+        { title:"MBK Partners × 牧野フライス：FEFTA改正後初のTOB阻止勧告", tag:"規制リスク", tagCls:"t-red", meta:"MBK Partners ｜ TOB中止勧告 ｜ 精密機械・安保規制", body:"2026年4月、政府がFEFTA改正後初となるTOB停止勧告をMBK Partnersの牧野フライス買収に発動。安全保障上の懸念が理由。9年間ゼロだった勧告が初適用され、外資PE戦略全体への影響が広がる。", sig:"FEFTA安保審査が外資PE戦略の新たな制約に" },
+        { title:"日本PE市場：年間ディールバリュー5年連続3兆円超・EV過去最高2.4兆円", tag:"マーケット動向", tagCls:"t-orange", meta:"日本PE市場全体 ｜ ¥4.8兆（取引額）・¥2.4兆（EV） ｜ バイアウト中心", body:"2025年の日本PE市場はディールバリュー4.8兆円（5年連続3兆円超）・EV過去最高2.4兆円を記録。テイクプライベートが全体の約半数を占め、60〜80%のプレミアムが標準化。外資PE日本専任チームの拡充が加速。", sig:"コーポレートガバナンス改革が日本PE黄金時代を継続" },
+        { title:"事業承継PE：後継者不在$1.6兆市場への参入加速", tag:"事業承継", tagCls:"t-blue", meta:"国内PE複数社 ｜ 中小企業事業承継 ｜ ミドルマーケット", body:"後継者不在の中小企業$1.6兆（推計）市場へのPE参入が加速。地方銀行との協調案件・地域密着型バイアウトが増加。事業承継補助金・税制優遇との組み合わせで案件成立率が向上。", sig:"地方銀行との協調融資モデルが標準化へ" }
+      ],
+      outlook: "💡 FEFTA安保審査の初適用により外資PEの対日投資プロセスに新たな不確実性。TOBルール改正×FEFTA二重ハードルを乗り越える案件組成力が2026年後半の差別化要因に。"
+    },
+    takeaway: "2026年6月30日（Q2最終日）、S&P 500が+0.79%、Dow Jonesが史上初めて52,000を突破し、全主要指数が2020年以来最良の四半期を締めくくった。VIXは21台から17.65に低下しリスクセンチメントが回復。一方でJOLTS求人件数が予想を上回り10Y金利は4.39%に上昇、利下げ期待はさらに後退。GoldはQ2で14%下落（2013年以来最悪）、原油は6年ぶり最悪の四半期。US Private Credit市場ではCarlyle（$85億）・Brookfield（$200億目標）の大型ファンドレイズが順調な一方、エバーグリーン型ファンドの流動性問題が浮上。日本ではMBK×牧野フライスのFEFTA初適用という歴史的事案により外資PE戦略に新たな安保制約が加わる局面を迎えた。"
   }
 ];
 // ── END_DATA ──
@@ -341,14 +392,6 @@ const MARKET_REPORTS = [
         <div class="deal-sig">${d.sig}</div>
       </div>`).join('');
 
-    /* Historical data for this date's charts */
-    const sorted=[...MARKET_REPORTS].sort((a,b)=>a.date.localeCompare(b.date));
-    const hLabels=JSON.stringify(sorted.map(x=>x.dateLabel));
-    const hSP=JSON.stringify(sorted.map(x=>x.indices.sp500.pct));
-    const hNQ=JSON.stringify(sorted.map(x=>x.indices.nasdaq.pct));
-    const hDow=JSON.stringify(sorted.map(x=>x.indices.dow.pct));
-    const mData=JSON.stringify(r.movers);
-
     return `
     <div class="section">
       <div class="sec-title">📊 主要指数 / Major Indices</div>
@@ -416,10 +459,7 @@ const MARKET_REPORTS = [
       </div>
     </div>
 
-    <script>
-      window.__cd=window.__cd||{};
-      window.__cd['${r.date}']={hl:${hLabels},sp:${hSP},nq:${hNQ},dw:${hDow},mv:${mData}};
-    <\/script>`;
+    `;
   }
 
   /* ── Charts ── */
@@ -467,7 +507,21 @@ const MARKET_REPORTS = [
     }
   }
 
+  /* ── Prepare Chart Data (must run before buildPanels) ── */
+  function prepareChartData(){
+    window.__cd = window.__cd || {};
+    const sorted = [...MARKET_REPORTS].sort((a,b)=>a.date.localeCompare(b.date));
+    const hLabels = sorted.map(x=>x.dateLabel);
+    const hSP  = sorted.map(x=>x.indices.sp500.pct);
+    const hNQ  = sorted.map(x=>x.indices.nasdaq.pct);
+    const hDow = sorted.map(x=>x.indices.dow.pct);
+    MARKET_REPORTS.forEach(r=>{
+      window.__cd[r.date]={hl:hLabels,sp:hSP,nq:hNQ,dw:hDow,mv:r.movers};
+    });
+  }
+
   /* ── Init ── */
+  prepareChartData();
   buildTabs();
   buildPanels();
   const latest=[...MARKET_REPORTS].sort((a,b)=>b.date.localeCompare(a.date))[0].date;
