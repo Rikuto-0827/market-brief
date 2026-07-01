@@ -104,6 +104,13 @@ a{color:#3b82f6}
 .deal-body{font-size:12px;color:#64748b;line-height:1.65}
 .deal-sig{font-size:11px;font-weight:600;color:#6366f1;margin-top:7px}
 .deal-sig::before{content:'⚡ '}
+.deal-link,.ev-link{display:inline-block;margin-top:9px;font-size:11px;font-weight:700;text-decoration:none;padding:3px 10px;border-radius:20px;transition:opacity .15s}
+.deal-link{background:#ede9fe;color:#7c3aed}.deal-link:hover{opacity:.75}
+.ev-link{background:#dbeafe;color:#1d4ed8}.ev-link:hover{opacity:.75}
+.pe-news-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;align-items:center}
+.pe-news-links span{font-size:11px;color:#94a3b8;font-weight:600}
+.pe-news-btn{font-size:11px;padding:4px 11px;border-radius:20px;background:#f1f5f9;color:#475569;text-decoration:none;font-weight:600;transition:background .15s}
+.pe-news-btn:hover{background:#e2e8f0;color:#1e293b}
 .pc-outlook{border-radius:10px;padding:14px 16px;font-size:13px;line-height:1.75;border:1px solid}
 .us-box .pc-outlook{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#bfdbfe;color:#1e3a8a}
 .jp-box .pc-outlook{background:linear-gradient(135deg,#fffbeb,#fef3c7);border-color:#fcd34d;color:#78350f}
@@ -116,6 +123,37 @@ a{color:#3b82f6}
 /* ─── Footer ─── */
 footer{background:#0f172a;color:#475569;text-align:center;padding:18px;font-size:11px;line-height:1.8}
 footer b{color:#60a5fa}
+
+/* ─── Narrative ─── */
+.narrative-box{background:#fff;border-radius:14px;padding:24px 28px;box-shadow:0 1px 5px rgba(0,0,0,.07);border:1px solid #f1f5f9;font-size:14px;line-height:2.1;color:#374151}
+.narrative-box p{margin-bottom:1.3em}.narrative-box p:last-child{margin-bottom:0}
+
+/* ─── PE Training ─── */
+.pet-summary{background:linear-gradient(135deg,#0f172a,#1e3a5f);border-radius:14px;padding:18px 24px;margin-bottom:16px}
+.pet-summary-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#93c5fd;margin-bottom:8px}
+.pet-summary-txt{font-size:14px;font-weight:600;line-height:1.85;color:#e0f2fe}
+.pet-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.pet-grid{grid-template-columns:1fr}}
+.pet-card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 1px 5px rgba(0,0,0,.07);border:1px solid #f1f5f9}
+.pet-card-hdr{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #f1f5f9}
+.qa-item{padding:11px 0;border-bottom:1px solid #f8fafc}
+.qa-item:last-child{border:none;padding-bottom:0}
+.qa-q{font-size:12px;font-weight:700;color:#1e293b;margin-bottom:7px;line-height:1.55}
+.qa-q::before{content:'Q. ';color:#3b82f6;font-size:13px}
+.qa-a{font-size:12px;color:#475569;line-height:1.8;padding-left:18px}
+.concept-items{display:flex;flex-direction:column;gap:8px}
+.concept-item{background:#f8fafc;border-radius:8px;padding:10px 12px}
+.concept-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:#94a3b8;margin-bottom:3px}
+.concept-val{font-size:12px;color:#374151;line-height:1.65}
+.da-items{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media(max-width:500px){.da-items{grid-template-columns:1fr}}
+.da-item{border-radius:8px;padding:11px 13px;border-left:3px solid}
+.da-item.thesis{background:#eff6ff;border-color:#3b82f6}
+.da-item.timing{background:#f0fdf4;border-color:#10b981}
+.da-item.downside{background:#fef2f2;border-color:#ef4444}
+.da-item.valuation{background:#f5f3ff;border-color:#8b5cf6}
+.da-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:#94a3b8;margin-bottom:3px}
+.da-val{font-size:12px;color:#374151;line-height:1.65}
 </style>
 </head>
 <body>
@@ -289,7 +327,39 @@ const MARKET_REPORTS = [
       ],
       outlook: "💡 FEFTA安保審査の初適用により外資PEの対日投資プロセスに新たな不確実性。TOBルール改正×FEFTA二重ハードルを乗り越える案件組成力が2026年後半の差別化要因に。"
     },
-    takeaway: "2026年6月30日（Q2最終日）、S&P 500が+0.79%、Dow Jonesが史上初めて52,000を突破し、全主要指数が2020年以来最良の四半期を締めくくった。VIXは21台から17.65に低下しリスクセンチメントが回復。一方でJOLTS求人件数が予想を上回り10Y金利は4.39%に上昇、利下げ期待はさらに後退。GoldはQ2で14%下落（2013年以来最悪）、原油は6年ぶり最悪の四半期。US Private Credit市場ではCarlyle（$85億）・Brookfield（$200億目標）の大型ファンドレイズが順調な一方、エバーグリーン型ファンドの流動性問題が浮上。日本ではMBK×牧野フライスのFEFTA初適用という歴史的事案により外資PE戦略に新たな安保制約が加わる局面を迎えた。"
+    takeaway: "2026年6月30日（Q2最終日）、S&P 500が+0.79%、Dow Jonesが史上初めて52,000を突破し、全主要指数が2020年以来最良の四半期を締めくくった。VIXは21台から17.65に低下しリスクセンチメントが回復。一方でJOLTS求人件数が予想を上回り10Y金利は4.39%に上昇、利下げ期待はさらに後退。GoldはQ2で14%下落（2013年以来最悪）、原油は6年ぶり最悪の四半期。US Private Credit市場ではCarlyle（$85億）・Brookfield（$200億目標）の大型ファンドレイズが順調な一方、エバーグリーン型ファンドの流動性問題が浮上。日本ではMBK×牧野フライスのFEFTA初適用という歴史的事案により外資PE戦略に新たな安保制約が加わる局面を迎えた。",
+    narrative: "2026年Q2最終日の市場は、「好調な経済指標と金利高止まりの共存」という今年を象徴するパラドックスで締めくくられた。S&P 500は+0.79%、Dow Jonesは史上初めて52,000台を突破し、主要3指数がそろって2020年のパンデミック回復局面以来最高の四半期パフォーマンスを記録した。表面上は典型的なリスクオンの景色だ。||しかし水面下を見ると、話はそう単純ではない。JOLTS（雇用動態調査）が予想を大幅に上回ったことで、米10年債利回りは4.39%に上昇した。Fed議長ウォーシュはバランスシート縮小タスクフォースの創設を発表し、QT加速への地ならしも進む。市場は「growth without easing（緩和なき成長）」というシナリオを静かに織り込みつつある。GoldがQ2で14%下落し2013年以来最悪となったのも、「金利上昇で実質金利がプラス化した現実」が資産配分を根本から変えていることを示す。||プライベートクレジット市場への含意はさらに複層的だ。金利高止まりはダイレクトレンディングのスプレッドを維持する追い風となる一方、ポートフォリオ企業の利払い負担を押し上げ、PIKトグルの行使増加や緩やかなデフォルト率上昇につながる。Q1のエバーグリーン型ファンドからの$100億超の解約申請は、こうした構造的ストレスが投資家心理に与えた影響の大きさを物語る。||それでもCarlyle（$85億アンカー調達）やBrookfield（$200億目標）の大型ファンド組成が順調なことは、「強者がより強く」という二極化の現実を証明する。トラックレコードのある大手マネジャーには資金が集まり、未確立の中小マネジャーは苦境に立たされる。この構造は日本の生保・年金のLP行動にも同様に当てはまり、2026年後半の最重要テーマとなるだろう。||日本PEは今、二つの歴史的変化が同時進行している。一つはMBK Partners×牧野フライスへのFEFTA初適用で、9年間ゼロだった政府の買収阻止勧告が現実となった。安全保障審査が外資PEの投資判断に組み込まれる新時代の幕開けだ。もう一つはディールバリューの5年連続3兆円超という市場の成熟で、テイクプライベートが全体の半数、60〜80%プレミアムが標準化するなど量的・質的の両面で進化が続く。この複雑さをどう読み解くか——それがこのマーケットのプロに求められる核心的な視点だ。",
+    peTraining: {
+      thirtySecSummary: "本日のポイントは3点。①Dow Jones史上初の52,000突破でQ2は2020年以来最良の四半期。②JOLTS予想超えで10年債4.39%に上昇、利下げ期待は完全に後退しgrowth without easingシナリオへ。③プライベートクレジットはCarlyle・Brookfieldが大型調達で強者優位が鮮明、日本ではFEFTA初適用という歴史的転換点を迎えた。",
+      interviewQA: [
+        {
+          q: "最近のプライベートクレジット市場で最も注目しているトレンドを教えてください",
+          a: "エバーグリーン型DLファンドからの大規模解約（Q1: $100億超）とABF・Specialty Financeへの資金シフトです。背景には金利高止まり環境でのバリュエーション懸念と流動性需要の増大があります。特に注目しているのはABFとRated Feeder Note（RFN）の組み合わせで、規制資本コストに敏感な保険会社資本をプライベートクレジットに呼び込む構造が大手マネジャーの差別化要因となっています。Apolloがこの垂直統合モデルで先行しており、日本の生保・年金資本がこの流れに乗る可能性を注視しています。"
+        },
+        {
+          q: "日本のPE市場の現状と今後の見通しを聞かせてください",
+          a: "2025年のディールバリューが4.8兆円と5年連続3兆円超を記録し、テイクプライベートが全体の約半数を占めるなど構造的成長局面にあります。コーポレートガバナンス改革とTSEのPBR1倍割れ改善要求が継続的な案件供給源となっています。一方で今年4月のMBK Partners×牧野フライスへのFEFTA初適用は重要なターニングポイントで、安全保障審査が外資PEの投資判断に新たな変数を加えました。この変化は案件スクリーニングの複雑化を意味しますが、同時に安保上の懸念が低い案件や国内PEとの協調という新たな戦略機会も生み出します。"
+        },
+        {
+          q: "PIKトグルとは何か、なぜ今それが問題になっているか説明してください",
+          a: "PIK（Payment-in-Kind）トグルとは、借り手が現金での利払いの代わりに元本を膨らませる形で利払いを代替できる条項です。業績低迷期の息継ぎ弁として設計されましたが、高金利環境の長期化でその行使が増加し、貸し手にとっては元本膨張＝将来のデフォルト確率上昇を意味します。現在PIK比率の上昇はポートフォリオストレスの先行指標として業界で注視されており、Q1のエバーグリーン型DLファンドからの解約ラッシュの一因ともなっています。投資家がPIKで見かけ上の健全性を保っているうちに解約したいと動いた結果です。"
+        }
+      ],
+      keyConceptToday: {
+        term: "PIKトグル（Payment-in-Kind Toggle）",
+        definition: "借り手が現金での利払いの代わりに追加元本（ローン残高の増加）で利払いを代替できる条項。現金支出を抑えながら債務を維持できるが、元本は膨張し続ける。",
+        background: "LBO後にキャッシュフローが一時的に悪化した企業の息継ぎ弁として開発された。業績回復後に現金払いに戻る想定で設計されているが、本質的には利払い負担の先送り機能でもある。",
+        practical: "貸し手視点では「PIK比率の上昇＝ポートフォリオストレスの先行指標」として監視する。PIK行使が増えると元本が膨張し、最終的なデフォルト時の損失額（LGD）が拡大する。クレジットアナリストは現金払い比率をモニタリング指標として重点追跡する。",
+        context2026: "金利高止まりの長期化でPIKトグルの行使が増加し、エバーグリーン型DLファンドからの解約ラッシュの一因となった。市場全体のデフォルト率が急上昇しているわけではないが、PIK増加はその予兆として業界全体で警戒されている局面。"
+      },
+      dealAnalysis: {
+        title: "MBK Partners × 牧野フライス（工作機械バイアウト）",
+        thesis: "コーポレートガバナンス改革を追い風にP2P案件が増加する日本市場でのバイアウト。コスト構造改革・海外販路拡大・設備更新サイクルを活用したオペレーショナルバリューアップを想定した案件。",
+        timing: "TSEのガバナンス改革でPBR1倍割れ製造業への外資PEの関心が高まるタイミング。上場廃止・非公開化が加速する局面での案件組成。ただし今回はFEFTA審査という予測困難なリスクが顕在化した。",
+        downside: "工作機械は景気感応度が高くグローバル設備投資サイクル悪化時に収益が急落するリスク。さらにFEFTA規制による取得阻止が現実となり投資前提が崩壊。安保規制の予測困難性が最大のリスク要因として確定した。",
+        valuation: "製造業バイアウトは一般にEV/EBITDA 8〜12xで評価。成長性より安定CF・ROE向上でバリュー正当化。日本では60〜80%のTOBプレミアムが標準化しエントリーバリュエーションが高くなる傾向があり、バリューアップの確実な実行がリターンの鍵となる。"
+      }
+    }
   }
 ];
 // ── END_DATA ──
@@ -357,7 +427,7 @@ const MARKET_REPORTS = [
     /* Movers list */
     const moversHtml=r.movers.map(m=>`
       <div class="mover-row">
-        <div class="mover-ticker">${m.ticker}</div>
+        <div class="mover-ticker"><a href="https://finance.yahoo.com/quote/${m.ticker}" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px dashed #94a3b8">${m.ticker}</a></div>
         <div class="mover-info">
           <div class="mover-name">${m.name}</div>
           <div class="mover-why">${m.why}</div>
@@ -370,6 +440,7 @@ const MARKET_REPORTS = [
       <div class="ev-item">
         <div class="ev-title">${e.icon}&ensp;${e.title}</div>
         <div class="ev-detail">${e.detail}</div>
+        <a href="https://news.google.com/search?q=${encodeURIComponent(e.title)}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="ev-link">🔍 ニュースを検索 →</a>
       </div>`).join('');
 
     /* US deals */
@@ -380,6 +451,7 @@ const MARKET_REPORTS = [
         <div class="deal-meta">${d.meta}</div>
         <div class="deal-body">${d.body}</div>
         <div class="deal-sig">${d.sig}</div>
+        <a href="${d.url||'https://news.google.com/search?q='+encodeURIComponent(d.title)+'&hl=ja&gl=JP&ceid=JP:ja'}" target="_blank" class="deal-link">🔍 関連ニュース →</a>
       </div>`).join('');
 
     /* JP deals */
@@ -390,6 +462,7 @@ const MARKET_REPORTS = [
         <div class="deal-meta">${d.meta}</div>
         <div class="deal-body">${d.body}</div>
         <div class="deal-sig">${d.sig}</div>
+        <a href="${d.url||'https://news.google.com/search?q='+encodeURIComponent(d.title)+'&hl=ja&gl=JP&ceid=JP:ja'}" target="_blank" class="deal-link">🔍 関連ニュース →</a>
       </div>`).join('');
 
     return `
@@ -436,6 +509,14 @@ const MARKET_REPORTS = [
         <div class="pc-summary">${r.usCredit.summary}</div>
         <div class="deals-grid">${usDeals}</div>
         <div class="pc-outlook">${r.usCredit.outlook}</div>
+        <div class="pe-news-links">
+          <span>📰 情報源:</span>
+          <a href="https://www.privateequityinternational.com/" target="_blank" class="pe-news-btn">PEI</a>
+          <a href="https://pitchbook.com/news/articles" target="_blank" class="pe-news-btn">PitchBook</a>
+          <a href="https://www.withintelligence.com/" target="_blank" class="pe-news-btn">WithIntelligence</a>
+          <a href="https://news.google.com/search?q=private+credit+direct+lending+2026&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="pe-news-btn">🔍 PC最新ニュース</a>
+          <a href="https://news.google.com/search?q=private+equity+buyout+fund+raise+2026&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="pe-news-btn">🔍 PE最新ニュース</a>
+        </div>
       </div>
     </div>
 
@@ -449,8 +530,61 @@ const MARKET_REPORTS = [
         <div class="pc-summary">${r.jpCredit.summary}</div>
         <div class="deals-grid">${jpDeals}</div>
         <div class="pc-outlook">${r.jpCredit.outlook}</div>
+        <div class="pe-news-links">
+          <span>📰 情報源:</span>
+          <a href="https://www.dealstreetasia.com/stories/japan" target="_blank" class="pe-news-btn">DealStreet Asia</a>
+          <a href="https://www.bain.com/insights/topics/private-equity/" target="_blank" class="pe-news-btn">Bain PE</a>
+          <a href="https://www.financierworldwide.com/qa-japanese-ma-in-2026" target="_blank" class="pe-news-btn">Japan M&A 2026</a>
+          <a href="https://news.google.com/search?q=%E6%97%A5%E6%9C%AC+%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88%E3%82%A8%E3%82%AF%E3%82%A4%E3%83%86%E3%82%A3+2026&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="pe-news-btn">🔍 日本PEニュース</a>
+          <a href="https://news.google.com/search?q=%E6%97%A5%E6%9C%ACTOB+%E3%83%90%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88+2026&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="pe-news-btn">🔍 TOB/M&A</a>
+        </div>
       </div>
     </div>
+
+    ${r.narrative?`
+    <div class="section">
+      <div class="sec-title">📖 マーケットナラティブ — 今日の市場を読む</div>
+      <div class="narrative-box">${r.narrative.split('||').map(p=>`<p>${p.trim()}</p>`).join('')}</div>
+    </div>`:''}
+
+    ${r.peTraining?`
+    <div class="section">
+      <div class="sec-title">🎯 PE実力養成 — 今日の市場をどう語るか</div>
+      <div class="pet-summary">
+        <div class="pet-summary-lbl">⏱ 30秒で説明するなら</div>
+        <div class="pet-summary-txt">${r.peTraining.thirtySecSummary}</div>
+      </div>
+      <div class="pet-grid">
+        <div class="pet-card">
+          <div class="pet-card-hdr" style="color:#3b82f6">💬 面接想定Q&amp;A</div>
+          ${r.peTraining.interviewQA.map(qa=>`
+          <div class="qa-item">
+            <div class="qa-q">${qa.q}</div>
+            <div class="qa-a">${qa.a}</div>
+          </div>`).join('')}
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="pet-card">
+            <div class="pet-card-hdr" style="color:#8b5cf6">📚 今日のキーコンセプト：${r.peTraining.keyConceptToday.term}</div>
+            <div class="concept-items">
+              <div class="concept-item"><div class="concept-lbl">定義</div><div class="concept-val">${r.peTraining.keyConceptToday.definition}</div></div>
+              <div class="concept-item"><div class="concept-lbl">なぜ生まれたか</div><div class="concept-val">${r.peTraining.keyConceptToday.background}</div></div>
+              <div class="concept-item"><div class="concept-lbl">実務での使われ方</div><div class="concept-val">${r.peTraining.keyConceptToday.practical}</div></div>
+              <div class="concept-item"><div class="concept-lbl">2026年の文脈</div><div class="concept-val">${r.peTraining.keyConceptToday.context2026}</div></div>
+            </div>
+          </div>
+          <div class="pet-card">
+            <div class="pet-card-hdr" style="color:#10b981">🔬 案件分析：${r.peTraining.dealAnalysis.title}</div>
+            <div class="da-items">
+              <div class="da-item thesis"><div class="da-lbl">投資テーマ</div><div class="da-val">${r.peTraining.dealAnalysis.thesis}</div></div>
+              <div class="da-item timing"><div class="da-lbl">なぜ今か</div><div class="da-val">${r.peTraining.dealAnalysis.timing}</div></div>
+              <div class="da-item downside"><div class="da-lbl">ダウンサイド</div><div class="da-val">${r.peTraining.dealAnalysis.downside}</div></div>
+              <div class="da-item valuation"><div class="da-lbl">バリュエーション</div><div class="da-val">${r.peTraining.dealAnalysis.valuation}</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`:''}
 
     <div class="section">
       <div class="takeaway">
