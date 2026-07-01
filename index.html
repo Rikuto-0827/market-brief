@@ -366,6 +366,54 @@ const MARKET_REPORTS = [
         valuation: "製造業バイアウトは一般にEV/EBITDA 8〜12xで評価。成長性より安定CF・ROE向上でバリュー正当化。日本では60〜80%のTOBプレミアムが標準化しエントリーバリュエーションが高くなる傾向があり、バリューアップの確実な実行がリターンの鍵となる。"
       }
     }
+  },
+  {
+    date: "2026-07-01",
+    dateLabel: "Jul 01",
+    indices: {
+      sp500:  { name:"S&P 500",    flag:"🇺🇸", value:7449.4,  change:0.0,   pct:0.00,  dir:"flat" },
+      nasdaq: { name:"Nasdaq 100", flag:"🇺🇸", value:25190.0, change:0.0,   pct:0.00,  dir:"flat" },
+      dow:    { name:"Dow Jones",  flag:"🇺🇸", value:52319.2, change:0.0,   pct:0.00,  dir:"flat" },
+      nikkei: { name:"Nikkei 225", flag:"🇯🇵", value:70475.0, change:412.6, pct:0.59,  dir:"up" }
+    },
+    macro: {
+      "10Y米国債":  { value:"4.42%",   dir:"up"   },
+      "2Y米国債":   { value:"4.18%",   dir:"down" },
+      "VIX":        { value:"17.65",   dir:"flat" },
+      "DXY":        { value:"~101",    dir:"down" },
+      "WTI原油":    { value:"~$69",    dir:"down" },
+      "Gold金":     { value:"~$4,003", dir:"down" }
+    },
+    movers: [
+      { ticker:"FMC",  name:"FMC Corp.",              pct: 8.3,  dir:"up",   why:"農薬・特殊化学品メーカー、事業見通し改善を好感し急伸" },
+      { ticker:"NOW",  name:"ServiceNow",             pct: 4.1,  dir:"up",   why:"AI関連ソフトウェア需要への期待で上昇" },
+      { ticker:"GIS",  name:"General Mills",          pct: 4.4,  dir:"up",   why:"決算内容が市場予想を上回り食品セクターが堅調" },
+      { ticker:"KR",   name:"Kroger",                 pct:-2.8,  dir:"down", why:"Giant Eagleを16.5億ドルで買収すると発表、材料出尽くしで軟調" },
+      { ticker:"ESS",  name:"Essex Property Trust",   pct:-11.6, dir:"down", why:"住宅REIT、金利・需要懸念から大幅下落" },
+      { ticker:"PSA",  name:"Public Storage",         pct: -4.1, dir:"down", why:"REITセクター全般に売り、金利上昇を警戒" }
+    ],
+    events: [
+      { icon:"🎆", title:"2026年第3四半期（Q3）が寄り付き — 過去最高のQ2から続伸なるか", detail:"S&P 500・Nasdaqは前四半期に2020年以来最良のパフォーマンスを記録した後の初日。寄り付き前先物はやや軟調で「強すぎた四半期」後の一服感も。", searchKey:"S&P 500 futures Q3 2026 start after best quarter" },
+      { icon:"🛒", title:"Kroger、Giant Eagleを16.5億ドルで買収と発表", detail:"食品スーパー業界の再編が加速。Kroger株は発表を受けて寄り付き前に軟調。地域スーパー統合トレンドの一環として注目。", searchKey:"Kroger Giant Eagle acquisition 1.65 billion 2026" },
+      { icon:"⚖️", title:"日本のTOB規制改正が施行済み（2026年5月1日）— 下期の案件形成が本格化へ", detail:"市場内取引もTOB対象化、強制公開買付の閾値が1/3から30%に引き下げられた新ルールの下、下期の大型テイクプライベート案件の増加が見込まれる。", searchKey:"Japan TOB rule change May 2026 tender offer threshold" },
+      { icon:"🗻", title:"日経平均、7万台で続伸（+0.59%）", detail:"東京市場は堅調に推移し70,475円で取引を終了。米ハイテク株高の流れを引き継ぐ形に。", searchKey:"Nikkei 225 close July 1 2026" }
+    ],
+    usCredit: {
+      summary: "H1 2026の米ダイレクトレンディング市場は貸し手優位の局面へ転換。M&A回復や金利正常化を背景に、貸し手はより有利な価格・契約条件を交渉できる環境が続いている。一方でAI関連の過剰投資懸念や信用市場の後期サイクル的な過熱感が新たなリスク要因として意識されている。",
+      deals: [
+        { title:"Macquarie AM、10億ドルの米ダイレクトレンディングファンド組成", tag:"新規ファンド", tagCls:"t-blue", meta:"Macquarie Asset Management ｜ 10億ドル（2次クローズ4〜5億ドル目標） ｜ ダイレクトレンディング", body:"2025年11月に1次クローズ済み、2026年半ばの2次クローズを目指す。", sig:"運用会社の資金調達意欲は底堅く、市場拡大トレンドが継続。", searchKey:"Macquarie direct lending fund 1 billion 2026" }
+      ],
+      outlook: "💡 ダイレクトレンディング市場は現状の1.5〜2兆ドル規模から2028年に3兆ドル規模へ拡大する見通し。下期はLP流動性ニーズとAI関連ポートフォリオの再評価が焦点。"
+    },
+    jpCredit: {
+      summary: "2025年の日本PE取引額は4.8兆円（約300億ドル）と前年比約30%増加。テイクプライベート案件が全体の約半分を占め、コーポレートガバナンス改革と上場廃止の増加が背景にある。2026年も大型ディールが継続する見通し。",
+      deals: [
+        { title:"Apollo、日本板硝子(NSG)を37億ドルで買収", tag:"大型買収", tagCls:"t-purple", meta:"Apollo Global Management ｜ 37億ドル ｜ 素材・ガラス", body:"2026年に予定される大型テイクプライベート案件の一つ。", sig:"海外PEファンドによる日本の非中核・低評価企業への関心が継続。", searchKey:"Apollo Nippon Sheet Glass acquisition 3.7 billion 2026" },
+        { title:"Bain Capital、MCJを13億ドルで非公開化", tag:"非公開化", tagCls:"t-orange", meta:"Bain Capital ｜ 13億ドル ｜ 電子機器", body:"ガバナンス改革を背景とした上場廃止トレンドの一環。", sig:"中小型株のテイクプライベートが今後も増加する可能性。", searchKey:"Bain Capital MCJ privatization 1.3 billion 2026" }
+      ],
+      outlook: "💡 ガバナンス改革とTOB規制強化を背景に、2026年後半も日本の大型テイクプライベート案件が続く見通し。海外PEファンドの日本市場への関心は高水準を維持。"
+    },
+    takeaway: "米国市場はQ2の記録的な四半期を終え、Q3初日は前日終値近辺での様子見スタート。半導体・AI関連株への物色は継続する一方、寄り付き前先物はやや軟調で過熱感の一服も意識される。VIXは17台の低水準で市場心理は総じて楽観的。Private Credit市場は貸し手優位の局面へ転換しつつあり、Macquarieなど大手による新規ファンド組成が続く。日本ではApollo/日本板硝子、Bain/MCJなど大型テイクプライベート案件が相次ぎ、5月施行のTOB規制改正を背景に下期のM&A活発化が見込まれる。"
   }
 ];
 // ── END_DATA ──
