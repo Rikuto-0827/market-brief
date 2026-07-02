@@ -111,8 +111,12 @@ a{color:#3b82f6}
 .dl-ft{background:#fef3c7;color:#92400e}
 .dl-dst{background:#ecfdf5;color:#065f46}
 .dl-src{background:#f0fdf4;color:#15803d}
+.dl-wsj{background:#1f2937;color:#f3f4f6}
+.dl-jp{background:#eef2ff;color:#4338ca}
 .ev-link{display:inline-block;margin-top:8px;background:#dbeafe;color:#1d4ed8}
 .ev-link-ft{background:#fef3c7;color:#92400e}
+.ev-link-wsj{background:#1f2937;color:#f3f4f6}
+.ev-link-jp{background:#eef2ff;color:#4338ca}
 .pe-news-links{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid #e2e8f0;align-items:center}
 .pe-news-links span{font-size:11px;color:#94a3b8;font-weight:600}
 .pe-news-btn{font-size:11px;padding:4px 11px;border-radius:20px;background:#f1f5f9;color:#475569;text-decoration:none;font-weight:600;transition:background .15s}
@@ -176,6 +180,7 @@ footer b{color:#60a5fa}
 
 <footer>
   自動生成 by <b>Claude Cowork</b> ｜ EST 9:15 AM 毎朝更新 ｜ データはウェブ検索に基づく参考情報です。投資判断は自己責任でお願いします。
+  <br><span id="token-info" style="font-size:10px;opacity:.65"></span>
 </footer>
 
 <!-- ══════════════════════════════════════════
@@ -187,6 +192,7 @@ const MARKET_REPORTS = [
   {
     date: "2026-06-25",
     dateLabel: "Jun 25",
+    tokenEstimate: 15000,
     indices: {
       sp500:  { name:"S&P 500",     flag:"🇺🇸", value:5950.2,  change:28.5,  pct:0.52,  dir:"up"   },
       nasdaq: { name:"Nasdaq 100",  flag:"🇺🇸", value:21467.3, change:51.5,  pct:0.24,  dir:"up"   },
@@ -237,6 +243,7 @@ const MARKET_REPORTS = [
   {
     date: "2026-06-29",
     dateLabel: "Jun 29",
+    tokenEstimate: 15000,
     indices: {
       sp500:  { name:"S&P 500",    flag:"🇺🇸", value:7299.0,  change:-55.0,  pct:-0.75, dir:"down" },
       nasdaq: { name:"Nasdaq 100", flag:"🇺🇸", value:24940.0, change:-357.6, pct:-1.41, dir:"down" },
@@ -287,6 +294,7 @@ const MARKET_REPORTS = [
   {
     date: "2026-06-30",
     dateLabel: "Jun 30",
+    tokenEstimate: 22000,
     indices: {
       sp500:  { name:"S&P 500",    flag:"🇺🇸", value:7449.4,  change:58.4,   pct:0.79,  dir:"up" },
       nasdaq: { name:"Nasdaq 100", flag:"🇺🇸", value:25190.0, change:249.9,  pct:1.00,  dir:"up" },
@@ -370,6 +378,7 @@ const MARKET_REPORTS = [
   {
     date: "2026-07-01",
     dateLabel: "Jul 01",
+    tokenEstimate: 22000,
     indices: {
       sp500:  { name:"S&P 500",    flag:"🇺🇸", value:7449.4,  change:0.0,   pct:0.00,  dir:"flat" },
       nasdaq: { name:"Nasdaq 100", flag:"🇺🇸", value:25190.0, change:0.0,   pct:0.00,  dir:"flat" },
@@ -377,12 +386,16 @@ const MARKET_REPORTS = [
       nikkei: { name:"Nikkei 225", flag:"🇯🇵", value:70475.0, change:412.6, pct:0.59,  dir:"up" }
     },
     macro: {
-      "10Y米国債":  { value:"4.42%",   dir:"up"   },
-      "2Y米国債":   { value:"4.18%",   dir:"down" },
-      "VIX":        { value:"17.65",   dir:"flat" },
-      "DXY":        { value:"~101",    dir:"down" },
-      "WTI原油":    { value:"~$69",    dir:"down" },
-      "Gold金":     { value:"~$4,003", dir:"down" }
+      "10Y米国債":    { value:"4.42%",   dir:"up"   },
+      "2Y米国債":     { value:"4.18%",   dir:"down" },
+      "VIX":          { value:"17.65",   dir:"flat" },
+      "DXY":          { value:"~101",    dir:"down" },
+      "WTI原油":      { value:"~$69",    dir:"down" },
+      "Gold金":       { value:"~$4,003", dir:"down" },
+      "ドル円":       { value:"¥162.7",  dir:"up"   },
+      "日10年国債":   { value:"2.70%",   dir:"up"   },
+      "日銀政策金利": { value:"1.00%",   dir:"flat" },
+      "米HYスプレッド":{ value:"~2.6%",  dir:"flat" }
     },
     movers: [
       { ticker:"FMC",  name:"FMC Corp.",              pct: 8.3,  dir:"up",   why:"農薬・特殊化学品メーカー、事業見通し改善を好感し急伸" },
@@ -401,19 +414,54 @@ const MARKET_REPORTS = [
     usCredit: {
       summary: "H1 2026の米ダイレクトレンディング市場は貸し手優位の局面へ転換。M&A回復や金利正常化を背景に、貸し手はより有利な価格・契約条件を交渉できる環境が続いている。一方でAI関連の過剰投資懸念や信用市場の後期サイクル的な過熱感が新たなリスク要因として意識されている。",
       deals: [
-        { title:"Macquarie AM、10億ドルの米ダイレクトレンディングファンド組成", tag:"新規ファンド", tagCls:"t-blue", meta:"Macquarie Asset Management ｜ 10億ドル（2次クローズ4〜5億ドル目標） ｜ ダイレクトレンディング", body:"2025年11月に1次クローズ済み、2026年半ばの2次クローズを目指す。", sig:"運用会社の資金調達意欲は底堅く、市場拡大トレンドが継続。", searchKey:"Macquarie direct lending fund 1 billion 2026" }
+        { title:"Macquarie AM、10億ドルの米ダイレクトレンディングファンド組成", tag:"新規ファンド", tagCls:"t-blue", meta:"Macquarie Asset Management ｜ 10億ドル（2次クローズ4〜5億ドル目標） ｜ ダイレクトレンディング", body:"2025年11月に1次クローズ済み、2026年半ばの2次クローズを目指す。", sig:"運用会社の資金調達意欲は底堅く、市場拡大トレンドが継続。", searchKey:"Macquarie direct lending fund 1 billion 2026" },
+        { title:"BSL⇄プライベートクレジット、双方向の資金移動が活発化", tag:"市場構造", tagCls:"t-purple", meta:"市場全体 ｜ $37B（BSL→DL）／$34B（DL→BSL） ｜ シンジケートローン⇄DL", body:"広義シンジケートローン(BSL)市場からダイレクトレンディングへ約$37B、逆方向へ約$34Bの借り換えが発生。金利環境や案件特性に応じて最適な調達チャネルを選ぶ動きが常態化。", sig:"2つの市場の垣根が薄れ、借り手優位の裁定機会が拡大", searchKey:"broadly syndicated loan direct lending refinancing 2026" },
+        { title:"ジャンボローン（$10億超）の増加で大型顧客も取り込み", tag:"市場拡大", tagCls:"t-green", meta:"業界全体 ｜ 未投資資金(ドライパウダー) $400B超 ｜ 大型ダイレクトレンディング", body:"$10億超の大型プライベートクレジット案件（ジャンボローン）が増加し、これまでBSL市場が担っていた大企業向け融資にもDLが浸食。$400億超のドライパウダーが投資機会を待つ。", sig:"プライベートクレジットの対象領域がミドルマーケットから大企業へ拡大", searchKey:"jumbo private credit loans billion dollar 2026" }
       ],
       outlook: "💡 ダイレクトレンディング市場は現状の1.5〜2兆ドル規模から2028年に3兆ドル規模へ拡大する見通し。下期はLP流動性ニーズとAI関連ポートフォリオの再評価が焦点。"
     },
     jpCredit: {
       summary: "2025年の日本PE取引額は4.8兆円（約300億ドル）と前年比約30%増加。テイクプライベート案件が全体の約半分を占め、コーポレートガバナンス改革と上場廃止の増加が背景にある。2026年も大型ディールが継続する見通し。",
       deals: [
-        { title:"Apollo、日本板硝子(NSG)を37億ドルで買収", tag:"大型買収", tagCls:"t-purple", meta:"Apollo Global Management ｜ 37億ドル ｜ 素材・ガラス", body:"2026年に予定される大型テイクプライベート案件の一つ。", sig:"海外PEファンドによる日本の非中核・低評価企業への関心が継続。", searchKey:"Apollo Nippon Sheet Glass acquisition 3.7 billion 2026" },
-        { title:"Bain Capital、MCJを13億ドルで非公開化", tag:"非公開化", tagCls:"t-orange", meta:"Bain Capital ｜ 13億ドル ｜ 電子機器", body:"ガバナンス改革を背景とした上場廃止トレンドの一環。", sig:"中小型株のテイクプライベートが今後も増加する可能性。", searchKey:"Bain Capital MCJ privatization 1.3 billion 2026" }
+        { title:"Apollo、日本板硝子(NSG)を37億ドルで買収", tag:"大型買収", tagCls:"t-purple", meta:"Apollo Global Management ｜ 37億ドル ｜ 素材・ガラス", body:"2026年に予定される大型テイクプライベート案件の一つ。5月施行のTOB規制改正後、初期の大型案件としてプロセス設計のベンチマークとなる。", sig:"海外PEファンドによる日本の非中核・低評価企業への関心が継続。", searchKey:"Apollo Nippon Sheet Glass acquisition 3.7 billion 2026" },
+        { title:"Bain Capital、MCJを13億ドルで非公開化", tag:"非公開化", tagCls:"t-orange", meta:"Bain Capital ｜ 13億ドル ｜ 電子機器", body:"ガバナンス改革を背景とした上場廃止トレンドの一環。", sig:"中小型株のテイクプライベートが今後も増加する可能性。", searchKey:"Bain Capital MCJ privatization 1.3 billion 2026" },
+        { title:"Blackstone、過去最大の$131億アジアPEファンドをクローズ", tag:"ファンドレイズ", tagCls:"t-blue", meta:"Blackstone ｜ $13.1B（目標$10Bを超過） ｜ アジア全域・日本含む", body:"2026年6月2日、目標を上回りハードキャップでクローズ。過去24ヶ月でアジアに$70億超・12件を投資済みで、日本ではTechnoPro買収やAlinamin製薬のEXITなど活発。", sig:"海外メガファンドの日本を含むアジア専任投資体制が一段と強化", searchKey:"Blackstone Asia private equity fund 13.1 billion Japan 2026" }
       ],
       outlook: "💡 ガバナンス改革とTOB規制強化を背景に、2026年後半も日本の大型テイクプライベート案件が続く見通し。海外PEファンドの日本市場への関心は高水準を維持。"
     },
-    takeaway: "米国市場はQ2の記録的な四半期を終え、Q3初日は前日終値近辺での様子見スタート。半導体・AI関連株への物色は継続する一方、寄り付き前先物はやや軟調で過熱感の一服も意識される。VIXは17台の低水準で市場心理は総じて楽観的。Private Credit市場は貸し手優位の局面へ転換しつつあり、Macquarieなど大手による新規ファンド組成が続く。日本ではApollo/日本板硝子、Bain/MCJなど大型テイクプライベート案件が相次ぎ、5月施行のTOB規制改正を背景に下期のM&A活発化が見込まれる。"
+    takeaway: "米国市場はQ2の記録的な四半期を終え、Q3初日は前日終値近辺での様子見スタート。半導体・AI関連株への物色は継続する一方、寄り付き前先物はやや軟調で過熱感の一服も意識される。VIXは17台の低水準で市場心理は総じて楽観的。Private Credit市場は貸し手優位の局面へ転換しつつあり、Macquarieなど大手による新規ファンド組成が続く。日本ではApollo/日本板硝子、Bain/MCJなど大型テイクプライベート案件が相次ぎ、5月施行のTOB規制改正を背景に下期のM&A活発化が見込まれる。",
+    narrative: "2026年7月1日、市場はQ2の記録的な四半期を終えてQ3の初日を迎えた。S&P 500・Nasdaqは前四半期に2020年のパンデミック回復局面以来最良のパフォーマンスを記録しており、寄り付き前の先物がやや軟調なのは弱気転換のシグナルというより「強すぎた四半期」の一服感と見るのが妥当だろう。VIXは17台の低水準を維持しており、市場心理そのものは楽観的な地合いを崩していない。||個別銘柄では対照的な動きが目立った。FMC・ServiceNow・General Millsは事業見通しや決算内容の good newsを好感して上昇した一方、Essex Property TrustやPublic Storageなど住宅・商業REITは金利上昇への警戒から大きく売られた。Krogerによる Giant Eagle買収（16.5億ドル）は食品スーパー業界の再編機運を象徴する一件で、株価自体は「材料出尽くし」で軟調だったが、業界再編という構造トレンドの継続を示している。||プライベートクレジット市場では、量的な拡大だけでなく「市場の境界が溶けていく」変化が進行中だ。広義シンジケートローン(BSL)市場とダイレクトレンディングの間で$37B・$34Bという双方向の資金移動が発生しており、借り手は金利環境や案件特性に応じて最適な調達チャネルを機動的に選べるようになっている。加えて$10億超の「ジャンボローン」の増加は、プライベートクレジットの主戦場がミドルマーケットから大企業向け融資へと広がりつつあることを意味する。Macquarie Asset Managementなど大手による新規ファンド組成も、この拡大トレンドを裏付ける動きだ。||日本市場は、TOB規制改正（2026年5月1日施行）から2ヶ月が経過し、新ルール下での大型案件が実際に動き始めている。Apolloによる日本板硝子(NSG)買収（37億ドル）は、市場内取引もTOB対象化・強制TOB閾値30%という新環境下でのプロセス設計のベンチマークになりつつある。さらにBlackstoneが過去最大の$131億アジアPEファンドをクローズし、直近24ヶ月で日本を含むアジアに$70億超を投資してきた実績を踏まえると、海外メガファンドの日本への関心は構造的に高まり続けていると言える。||総じて本日は、「記録的な四半期の後の一服」という表層の下で、プライベートクレジット市場の境界拡大と、日本PE市場における新TOB規制下でのプロセス巧拙という、2026年後半を占う2つの構造変化が静かに進行している一日だったと言える。",
+    peTraining: {
+      thirtySecSummary: "本日のポイントは3点。①Q2の記録的相場を経てQ3が始動、先物はやや軟調も過熱感の一服にとどまる。②プライベートクレジット市場はBSLとの資金循環拡大とジャンボローン増加で対象領域が大企業まで拡大、Macquarieなど新規ファンド組成も継続。③日本ではTOB規制改正後初期の大型案件（Apollo/日本板硝子等）が新ルール下でのプロセス設計のベンチマークとなりつつある。",
+      interviewQA: [
+        {
+          q: "Q2に記録的な相場が続いた後、Q3入りでどんな点に注目していますか",
+          a: "寄り付き前先物のやや軟調な動きは、ファンダメンタルズの悪化というより「強すぎた四半期」の一服感だと捉えています。半導体・AI関連への物色は継続しており、短期的な押し目は良好なエントリー機会になり得ます。一方でVIXが17台という低水準にある局面は、裏を返せば市場が楽観に傾きすぎている可能性もあり、「静けさの中に潜むリスク」という視点も同時に持っておくべきタイミングだと考えています。"
+        },
+        {
+          q: "ダイレクトレンディング市場とBSL（広義シンジケートローン）市場の資金移動について教えてください",
+          a: "2026年は$37B相当のBSLローンがダイレクトレンディングへ、逆に$34B相当がBSLへと、双方向の借り換えが活発化しています。金利環境や案件の性質に応じて借り手が調達チャネルを機動的に選ぶ動きが常態化しており、$10億超のジャンボローンの増加によって、プライベートクレジットが対応できる顧客層もミドルマーケットから大企業へと広がっています。市場同士の境界が薄れていくトレンドと見ています。"
+        },
+        {
+          q: "日本のTOB規制改正から2ヶ月、実務への影響をどう見ていますか",
+          a: "市場内取引もTOB対象化され、強制TOB閾値が1/3から30%に引き下げられたことで、段階的な株式取得だけで支配権を握ることが難しくなりました。Apolloによる日本板硝子買収のような大型案件は、この新ルール下でのプロセス設計のベンチマークになりつつあり、案件組成力の巧拙がこれまで以上にディールの成否を左右する局面に入っています。"
+        }
+      ],
+      keyConceptToday: {
+        term: "強制公開買付（強制TOB）義務",
+        definition: "一定割合以上の株式を取得する際に、市場内・市場外を問わず全株主に対して同一条件での売却機会（公開買付）を提供することを義務付ける制度。",
+        background: "支配権の移動が一部の相対取引だけで完結すると、少数株主が不利な条件に取り残されるおそれがある。これを防ぐため、支配権移動時には全株主に平等なExit機会を保証する制度として整備されてきた。",
+        practical: "買収者はTOBの価格・期間・条件を精緻に設計する必要があり、閾値引き下げ後は市場内での段階的な株式取得だけで実質的な支配権を握ることが難しくなる。ディールチームにとってはプロセス設計そのものが差別化要因になる。",
+        context2026: "2026年5月1日施行の改正で、市場内取引もTOB規制の対象となり、強制TOBの閾値が1/3から30%へ引き下げられた。Apollo/日本板硝子やBain/MCJのような大型買収でも、新ルール下でのプロセス設計が案件成否を左右する要因として意識されている。"
+      },
+      dealAnalysis: {
+        title: "Apollo Global Management × 日本板硝子（NSG、ガラス・素材バイアウト）",
+        thesis: "素材・ガラス業界における非中核・低評価企業へのテイクプライベート。安定的なキャッシュフローとグローバル生産体制の再編余地に着目し、上場維持コストからの解放とオペレーショナルバリューアップを狙う案件。",
+        timing: "TOB規制改正後、初期の大型案件として新ルール下でのプロセス設計のベンチマークとなるタイミング。PBR1倍割れ・ガバナンス改革を背景とした非中核事業の見直し機運とも合致。",
+        downside: "素材業界は景気敏感かつ資本集約的で、グローバル需要の下振れ時に収益変動が大きい。新TOB規制下でのプロセス長期化・条件交渉の複雑化により、想定より時間とコストがかかるリスクもある。",
+        valuation: "素材セクターのバイアウトは一般にEV/EBITDA 6〜9x程度が目安。安定的なキャッシュフローとコスト構造改革余地でバリューを正当化する一方、日本特有の60〜80%のTOBプレミアムがエントリーコストを押し上げる傾向があり、バリューアップの確実な実行がリターンを左右する。"
+      }
+    }
   }
 ];
 // ── END_DATA ──
@@ -447,6 +495,16 @@ const MARKET_REPORTS = [
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.toggle('active',b.dataset.date===date));
     document.querySelectorAll('.report-panel').forEach(p=>p.classList.toggle('active',p.dataset.date===date));
     if(!charts[date]) setTimeout(()=>renderCharts(date),50);
+    updateTokenInfo(date);
+  }
+
+  /* ── Token usage footer note ── */
+  function updateTokenInfo(date){
+    const el = document.getElementById('token-info');
+    if(!el) return;
+    const r = MARKET_REPORTS.find(x=>x.date===date);
+    if(!r || !r.tokenEstimate){ el.textContent=''; return; }
+    el.textContent = `この日の更新の概算トークン使用量: 約${r.tokenEstimate.toLocaleString()}トークン（推定値・実測ではありません）｜ Claude Proの使用上限は非公開のため上限との割合は算出できません`;
   }
 
   /* ── Build All Panels ── */
@@ -497,8 +555,9 @@ const MARKET_REPORTS = [
         <div class="ev-title">${e.icon}&ensp;${e.title}</div>
         <div class="ev-detail">${e.detail}</div>
         <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
-          <a href="https://www.reuters.com/search/news?blob=${sk}" target="_blank" class="ev-link">📡 Reuters →</a>
+          <a href="https://www.wsj.com/search?query=${sk}" target="_blank" class="ev-link ev-link-wsj">📰 WSJ →</a>
           <a href="https://www.ft.com/search?q=${sk}" target="_blank" class="ev-link ev-link-ft">📰 FT →</a>
+          <a href="https://news.google.com/search?q=${sk}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="ev-link ev-link-jp">🇯🇵 日本語ニュース →</a>
         </div>
       </div>`;
     }).join('');
@@ -515,8 +574,9 @@ const MARKET_REPORTS = [
         <div class="deal-sig">${d.sig}</div>
         <div class="deal-links">
           ${d.url?`<a href="${d.url}" target="_blank" class="deal-link dl-src">🔗 Source</a>`:''}
-          <a href="https://www.reuters.com/search/news?blob=${sk}" target="_blank" class="deal-link dl-reuters">📡 Reuters</a>
+          <a href="https://www.wsj.com/search?query=${sk}" target="_blank" class="deal-link dl-wsj">📰 WSJ</a>
           <a href="https://www.ft.com/search?q=${sk}" target="_blank" class="deal-link dl-ft">📰 FT</a>
+          <a href="https://news.google.com/search?q=${sk}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="deal-link dl-jp">🇯🇵 日本語ニュース</a>
         </div>
       </div>`;
     }).join('');
@@ -533,8 +593,9 @@ const MARKET_REPORTS = [
         <div class="deal-sig">${d.sig}</div>
         <div class="deal-links">
           ${d.url?`<a href="${d.url}" target="_blank" class="deal-link dl-src">🔗 Source</a>`:''}
-          <a href="https://www.reuters.com/search/news?blob=${sk}" target="_blank" class="deal-link dl-reuters">📡 Reuters</a>
+          <a href="https://www.wsj.com/search?query=${sk}" target="_blank" class="deal-link dl-wsj">📰 WSJ</a>
           <a href="https://www.dealstreetasia.com/?s=${sk}" target="_blank" class="deal-link dl-dst">🌏 DealStreet</a>
+          <a href="https://news.google.com/search?q=${sk}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="deal-link dl-jp">🇯🇵 日本語ニュース</a>
         </div>
       </div>`;
     }).join('');
@@ -734,6 +795,7 @@ const MARKET_REPORTS = [
   buildPanels();
   const latest=[...MARKET_REPORTS].sort((a,b)=>b.date.localeCompare(a.date))[0].date;
   setTimeout(()=>renderCharts(latest),100);
+  updateTokenInfo(latest);
 })();
 </script>
 </body>
