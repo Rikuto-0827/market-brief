@@ -462,6 +462,86 @@ const MARKET_REPORTS = [
         valuation: "素材セクターのバイアウトは一般にEV/EBITDA 6〜9x程度が目安。安定的なキャッシュフローとコスト構造改革余地でバリューを正当化する一方、日本特有の60〜80%のTOBプレミアムがエントリーコストを押し上げる傾向があり、バリューアップの確実な実行がリターンを左右する。"
       }
     }
+  },
+  {
+    date: "2026-07-02",
+    dateLabel: "Jul 02",
+    tokenEstimate: 23000,
+    indices: {
+      sp500:  { name:"S&P 500",    flag:"🇺🇸", value:7483.2,  change:-16.5,  pct:-0.22, dir:"down" },
+      nasdaq: { name:"Nasdaq 100", flag:"🇺🇸", value:25023.7, change:-166.3, pct:-0.66, dir:"down" },
+      dow:    { name:"Dow Jones",  flag:"🇺🇸", value:52305.2, change:-14.0,  pct:-0.03, dir:"down" },
+      nikkei: { name:"Nikkei 225", flag:"🇯🇵", value:70671.0, change:608.0,  pct:0.87,  dir:"up"   }
+    },
+    macro: {
+      "10Y米国債":    { value:"4.47%",   dir:"up"   },
+      "2Y米国債":     { value:"4.16%",   dir:"flat" },
+      "VIX":          { value:"16.45",   dir:"down" },
+      "DXY":          { value:"~101.4",  dir:"up"   },
+      "WTI原油":      { value:"~$70",    dir:"up"   },
+      "Gold金":       { value:"~$4,090", dir:"up"   },
+      "ドル円":       { value:"¥162.7",  dir:"flat" },
+      "日10年国債":   { value:"2.71%",   dir:"up"   },
+      "日銀政策金利": { value:"1.00%",   dir:"flat" },
+      "米HYスプレッド":{ value:"~2.6%",  dir:"flat" }
+    },
+    movers: [
+      { ticker:"MU",   name:"Micron Technology",        pct:-10.6, dir:"down", why:"AIソフトウェア破壊懸念とバリュエーション調整で半導体株が急落" },
+      { ticker:"SNDK", name:"Sandisk",                  pct:-10.2, dir:"down", why:"2026年前半の急騰後の利益確定売り、メモリ需要懸念も一部影響" },
+      { ticker:"SMH",  name:"VanEck Semiconductor ETF", pct: -5.4, dir:"down", why:"半導体セクター全体に売り圧力、雇用統計を前にリスク回避" },
+      { ticker:"META", name:"Meta Platforms",           pct:  8.8, dir:"up",   why:"AIコンピューティングを外部提供するクラウド事業参入をBloombergが報道" },
+      { ticker:"RDDT", name:"Reddit",                   pct: 13.9, dir:"up",   why:"ソーシャルメディア株全般が上昇、明確な単独材料はなくセクター物色" }
+    ],
+    events: [
+      { icon:"📊", title:"6月雇用統計（NFP）発表 — Fed政策のカギを握る重要指標", detail:"8:30am ET発表予定。市場予想は+110〜115千人、失業率4.3%で概ね横ばい見込み。前日発表のADP民間雇用者数は+9.8万人と予想を下回り、労働市場減速のシグナルとして意識されている。強い数字ならFedの利下げ観測後退、弱い数字なら景気減速懸念台頭という両睨みの展開。", searchKey:"June 2026 jobs report nonfarm payrolls Federal Reserve" },
+      { icon:"☁️", title:"Meta Platforms急騰(+8.8%) — AIクラウド事業参入報道", detail:"Bloombergが、MetaがAIコンピューティング能力を外部顧客に販売するクラウドインフラ事業の計画を進めていると報道。AWS・Azure・Google Cloudに対抗する新たな収益源として市場が好感。データセンター投資の収益化ストーリーとして評価。", searchKey:"Meta Platforms AI cloud infrastructure business Bloomberg 2026" },
+      { icon:"💻", title:"半導体株が軒並み急落 — Micron・Sandisk 2桁安", detail:"AIによるソフトウェアビジネスモデル破壊懸念とバリュエーション調整で、MicronとSandiskが揃って10%超下落。VanEck半導体ETF(SMH)も-5.4%と急落。2026年前半に急騰した反動としての利益確定売りも重なる。", searchKey:"Micron Sandisk semiconductor stocks drop AI valuation 2026" },
+      { icon:"⚖️", title:"Kakaku.com争奪戦が本日決着へ — LINE Yahoo/Bain、EQTのTOBに対抗提案", detail:"LINE YahooがBain Capitalと組み、Kakaku.com（食べログ運営）に1株3,232円の対抗提案を提示。EQTの1株3,000円TOBは本日7/2が応募期限。AIデータ活用を巡る争奪戦として日本M&A市場の活発化を象徴する案件。", searchKey:"Kakaku.com LINE Yahoo Bain Capital EQT tender offer takeover 2026" }
+    ],
+    usCredit: {
+      summary: "Apollo×Blackstoneの$35B Anthropicチップファイナンスの構造詳細が明らかになる一方、業界全体ではノンアクルーアル増加やエバーグリーンファンド解約への懸念が根強く残る。ダイレクトレンディング市場は2028年までに$3兆規模への拡大が見込まれ、量的拡大と質的規律のせめぎ合いが続く。",
+      deals: [
+        { title:"Apollo×Blackstone $35B Anthropicチップファイナンス、Broadcomが保証提供で構造判明", tag:"プライベートクレジット", tagCls:"t-blue", meta:"Apollo Global + Blackstone ｜ $35B ｜ AIインフラ・チップファイナンス", body:"SPV経由でGoogle製TPUを購入しAnthropicへリースする構造。Broadcomが$300億のデットトランシェに残存価値保証を提供し、Apollo Atlas SPが$8億のエクイティを拠出。2028年までに20GW超のコンピュート展開を目指す巨大インフラファイナンス。", sig:"AIインフラ向けプライベートクレジットの新たな信用補完モデルが確立", searchKey:"Apollo Blackstone Anthropic 35 billion private credit Broadcom residual value" },
+        { title:"プライベートクレジット市場、$2650億規模の「メルトダウン」懸念が再燃", tag:"市場構造", tagCls:"t-red", meta:"Blackstone/KKR/Apollo/Ares/Blue Owl等 ｜ 業界全体 ｜ 信用リスク・流動性", body:"2026年前半に相次いだノンアクルーアル増加・PIK拡大・エバーグリーンファンドの解約ラッシュを受け、Wall Streetの「プライベートクレジット・ブーム」がパニックに転じつつあるとの分析が改めて注目を集めている。急拡大した市場の与信規律への懸念が根強い。", sig:"急成長の裏側にあるクレジットサイクル後半のリスクが投資家心理に影を落とす", searchKey:"private credit meltdown Blackstone KKR Apollo Ares Blue Owl 2026" },
+        { title:"ダイレクトレンディング市場、$3兆規模へ拡大見通し（2028年目標）", tag:"マーケット動向", tagCls:"t-orange", meta:"業界全体 ｜ 現在$1.5〜2兆 → 2028年$3兆予測 ｜ ダイレクトレンディング", body:"ダイレクトレンディング市場は広義シンジケートローン市場と並ぶ規模に到達し、2028年までに$3兆規模への拡大が見込まれる。規制環境・税制優遇・地銀の貸出制約が構造的な追い風として作用する一方、AI関連ポートフォリオの信用力評価が新たな焦点に。", sig:"市場拡大と質的規律のバランスが2026年後半の最大テーマ", searchKey:"direct lending market size 3 trillion 2028 forecast" },
+        { title:"Macquarie AM、10億ドルダイレクトレンディングファンドが2ndクローズへ", tag:"ファンドレイズ", tagCls:"t-green", meta:"Macquarie Asset Management ｜ $1B（2ndクローズ$4〜5億目標） ｜ 米国ダイレクトレンディング", body:"2025年11月の1stクローズに続き、2026年半ばの2ndクローズが目標時期に到達。中堅運用会社によるダイレクトレンディング分野への新規参入が引き続き活発。", sig:"資金の集中先は大手のみならず中堅プレイヤーにも波及", searchKey:"Macquarie Asset Management direct lending fund second close 2026" }
+      ],
+      outlook: "💡 AIインフラ向け大型ファイナンスが牽引する一方、ノンアクルーアル増加やエバーグリーンファンド解約への懸念も根強い。$3兆規模を目指す市場拡大と信用規律のバランスが後半戦の焦点。"
+    },
+    jpCredit: {
+      summary: "Kakaku.com争奪戦（LINE Yahoo/Bain vs EQT）が本日決着の山場を迎え、TOBルール改正後初の本格的な争奪戦型案件として注目度が高い。東証によるMBO・支配株主バイアウトの開示ルール強化も相まって、日本のガバナンス改革は買収プロセス全体の規律強化へ向かっている。",
+      deals: [
+        { title:"Kakaku.com争奪戦：LINE Yahoo/Bain、EQTの1株3,000円TOBに対抗し3,232円提案", tag:"テイクプライベート", tagCls:"t-red", meta:"LINE Yahoo + Bain Capital vs EQT ｜ 争奪戦 ｜ ネットメディア・データ", body:"欧州系EQTが進めるKakaku.com（食べログ運営）TOB（1株3,000円）に対し、LINE YahooがBain Capitalと組んで1株3,232円の対抗提案を提出。EQTのTOB応募期限は本日7/2。取締役会の判断とLINE Yahoo陣営の拘束力ある提案提示が焦点。", sig:"AIデータ活用を巡る争奪戦が日本のテイクプライベート案件を活性化", searchKey:"Kakaku.com LINE Yahoo Bain Capital EQT takeover battle July 2026" },
+        { title:"日本M&A市場、2025年に$3,850億規模で最高水準 — アクティビスト活動90%増", tag:"マーケット動向", tagCls:"t-blue", meta:"日本M&A市場全体 ｜ $385B（2025年） ｜ アクティビスト活動+90%", body:"2025年の日本M&A総額は$3,850億超と過去最高水準を記録。パブリック・アクティビストキャンペーンは前年比約90%増加し、コーポレートガバナンス改革を追い風に株主提案・非公開化提案が急増している。", sig:"アクティビスト主導の再編圧力が2026年後半も継続する見通し", searchKey:"Japan M&A record 2025 activist campaigns increase 2026" },
+        { title:"東証、MBO・支配株主による買収ルールを強化 — 開示義務厳格化", tag:"規制動向", tagCls:"t-purple", meta:"東京証券取引所 ｜ ルール改正 ｜ MBO・支配株主バイアウト", body:"東証がMBO（経営陣による買収）および支配株主によるバイアウトに関する開示ルールを強化。少数株主保護の観点から、価格算定根拠や特別委員会の独立性に関する情報開示義務が厳格化される見通し。", sig:"TOBルール改正に続き、MBO領域でもガバナンス強化の流れが加速", searchKey:"Tokyo Stock Exchange MBO controlling shareholder buyout disclosure rules 2026" },
+        { title:"Citigroup・大和証券、日本M&Aブームで投資銀行チーム拡充", tag:"業界動向", tagCls:"t-green", meta:"Citigroup / Daiwa Securities ｜ 人員拡充 ｜ 投資銀行部門", body:"日本のM&Aブームを追い風に、CitigroupがIBチームの拡大を計画。大和証券など国内大手も同様に専門人材の採用を加速しており、案件執行キャパシティの拡大競争が起きている。", sig:"案件供給の増加がアドバイザリー市場の人材獲得競争を誘発", searchKey:"Citigroup Daiwa Securities Japan M&A investment banking hiring 2026" }
+      ],
+      outlook: "💡 Kakaku.com争奪戦の決着とTSEのMBOルール強化により、日本のテイクプライベート市場はより高度なプロセス設計・ガバナンス対応が求められる局面へ。アクティビスト活動の高まりも案件供給を後押しする。"
+    },
+    takeaway: "本日（7/2）は6月雇用統計発表を控え、市場は様子見ムード。前日はNasdaqが半導体株安（Micron・Sandisk 2桁安）で軟調な一方、Meta（+8.8%）はAIクラウド事業参入報道で急伸しセクター内格差が鮮明に。日経平均は+0.87%で70,671円と堅調。プライベートクレジットはApollo×Blackstoneの$35B Anthropicチップファイナンスの構造詳細が判明する一方、業界全体では市場拡大とクレジットサイクル後半リスクの綱引きが継続。日本ではKakaku.com争奪戦（LINE Yahoo/Bain vs EQT）が本日期限を迎え、TOB改正後のプロセス巧拙を占う象徴的な一戦となる。",
+    narrative: "2026年7月2日、市場の最大の焦点は8:30am ET発表の6月雇用統計（NFP）に絞られていた。ウォール街のコンセンサスは+110〜115千人、失業率4.3%横ばい。前日発表のADP民間雇用者数が+9.8万人と予想を下回ったことで、労働市場の緩やかな減速シグナルが既に意識されており、強弱いずれの結果もFedの利下げ観測に直結する神経質な地合いとなった。前日の株式市場はS&P 500が-0.22%、Nasdaq Compositeが-0.66%とやや軟調に終えた一方、VIXは16台へ低下し表面的なパニックは見られない。||個別銘柄では明暗が分かれた。半導体株はAIソフトウェアの破壊懸念とバリュエーション調整でMicron・Sandiskが揃って10%超下落し、VanEck半導体ETF(SMH)も-5.4%と急落。一方でMeta PlatformsはBloombergによるAIクラウドインフラ事業参入報道を受けて+8.8%と急伸し、データセンター投資の収益化ストーリーが評価された。Reddit・Pinterest・Snapなどソーシャルメディア株もリスクオンの流れで軒並み上昇し、コミュニケーションサービスセクター内でのローテーションが鮮明になった一日だった。||プライベートクレジット市場では、Apollo×Blackstoneによる$35B Anthropicチップファイナンスの構造詳細が明らかになった。BroadcomがSPVの$300億デットトランシェに残存価値保証を提供する仕組みは、AIインフラ向け与信のリスク移転手法として今後のディール組成の雛形になる可能性がある。一方で市場全体では、2026年前半に相次いだノンアクルーアル増加・PIK拡大・エバーグリーンファンド解約ラッシュへの懸念が根強く残る。ダイレクトレンディング市場は2028年までに$3兆規模への拡大が見込まれる一方、質的な信用規律の維持が業界の持続的成長のカギを握る局面にある。||日本市場ではKakaku.com（食べログ運営）を巡る争奪戦が本日ヤマ場を迎える。欧州系EQTが提示した1株3,000円のTOBに対し、LINE YahooがBain Capitalと組んで1株3,232円の対抗提案を提出、EQTのTOB応募期限が本日7/2に設定されている。5月施行のTOBルール改正後、初の本格的な争奪戦型案件として注目度が高い。加えて東証がMBO・支配株主バイアウトの開示ルールを強化する方針を示しており、日本のガバナンス改革は上場企業の買収プロセス全体にさらに厳格な規律を課す方向へ進んでいる。||総じて本日は、雇用統計という単一のマクロイベントを前に市場全体がやや守りの姿勢を見せつつも、AIインフラを巡る資金の攻防（半導体株の調整とMetaのクラウド参入期待、Apollo×Blackstoneの巨大チップファイナンス）と、日本のガバナンス改革が生む案件機会（Kakaku.com争奪戦、TSEのMBOルール強化）という2つの構造トレンドが同時進行していることを再確認させる一日だった。プライベートクレジット・PE双方において、規律とスピードの両立が今後の勝敗を分ける核心的な論点となっている。",
+    peTraining: {
+      thirtySecSummary: "本日のポイントは3点。①6月雇用統計発表を控え市場は様子見、ADP弱含みで労働市場減速シグナルが強まる。②半導体株（Micron・Sandisk）が2桁安の一方、MetaはAIクラウド参入報道で+8.8%と急伸しAI関連での明暗が鮮明。③日本ではKakaku.com争奪戦（LINE Yahoo/Bain vs EQT）が本日決着へ、TSEのMBOルール強化と合わせガバナンス規律強化の流れが加速。",
+      interviewQA: [
+        { q: "6月雇用統計が市場に与える影響をどう見ていますか", a: "コンセンサスは+110〜115千人、失業率4.3%で概ね横ばいですが、前日のADP統計が予想を下回ったことで下振れ警戒も強まっています。強い数字が出ればFedの利下げ観測が後退し長期金利に上昇圧力、逆に弱い数字が出れば景気減速懸念から株式市場にはネガティブに働きます。ソフトランディングシナリオを支持する『適度な弱さ』（+100〜120千人程度）が市場にとって最も歓迎される着地点だと考えています。" },
+        { q: "Apollo×BlackstoneのAnthropicチップファイナンスの意義を説明してください", a: "この案件は単なる大型融資ではなく、AIインフラ投資特有のリスクをどう分散するかという構造上の革新性が本質です。BroadcomがSPVの債務トランシェに残存価値保証を提供することで、ハードウェアの陳腐化リスクという従来のプライベートクレジットにはなかった論点に対応しています。今後同様のAIインフラファイナンスが増える中で、このリスク移転モデルが業界標準になっていく可能性が高いと見ています。" },
+        { q: "Kakaku.com争奪戦から読み取れる日本M&A市場の変化とは", a: "海外PE（EQT）と国内事業会社・PE連合（LINE Yahoo・Bain Capital）が公然と競り合う構図は、日本市場ではまだ珍しく象徴的です。5月施行のTOBルール改正でプロセスの透明性・公平性が求められる中、対抗提案が真正面から提示されたことは、日本のM&A市場が『相対交渉中心』から『競争入札型』へ成熟しつつあることを示しています。今後同様の争奪戦型案件が増える可能性が高いと見ています。" }
+      ],
+      keyConceptToday: {
+        term: "残存価値保証（Residual Value Guarantee）",
+        definition: "リース資産やファイナンス対象資産の将来売却価値（残存価値）について、一定水準を保証する契約上の取り決め。資産価値が保証水準を下回った場合、保証提供者が差額を補填する。",
+        background: "航空機リースなど陳腐化リスクの高い資産のファイナンスにおいて、貸し手のダウンサイドを限定するために発展した仕組み。近年はデータセンター・半導体などAIインフラ資産にも応用が広がっている。",
+        practical: "貸し手（プライベートクレジットファンド等）は、資産の技術的陳腐化リスクを保証提供者（メーカーや専門会社）に一部移転できるため、より積極的な与信判断が可能になる。保証提供者にとっては自社製品の需要創出・エコシステム強化という戦略的意義もある。",
+        context2026: "Apollo×BlackstoneのAnthropic向け$35Bチップファイナンスでは、BroadcomがTPU等AIチップの残存価値を保証することで、$300億規模のデットトランシェの信用力を補完した。AIインフラファイナンスにおける新たな与信構造のモデルケースとして注目されている。"
+      },
+      dealAnalysis: {
+        title: "Kakaku.com争奪戦（LINE Yahoo/Bain Capital vs EQT）",
+        thesis: "食べログ等の消費者データ・トラフィックを持つプラットフォーム企業に対し、AIデータ活用・広告事業強化の観点から複数の買い手が争奪する構図。データ資産の戦略的価値が非公開化のプレミアムを正当化する案件。",
+        timing: "EQTのTOB応募期限が本日7/2に設定される中、LINE Yahoo/Bain連合が土壇場で対抗提案を提示。TOBルール改正後の争奪戦型案件の先行事例として、今後の類似案件のプロセス設計に影響を与えるタイミング。",
+        downside: "争奪戦による価格つり上げでエントリーバリュエーションが上昇し、投資リターンが圧迫されるリスク。また取締役会・特別委員会の判断プロセスが長期化し、案件不成立や条件変更のリスクも残る。",
+        valuation: "ネットメディア・データプラットフォーム企業は一般にEV/EBITDA 10〜15x程度で評価される傾向。データ資産のAI活用による将来収益化ポテンシャルが高PERを正当化する一方、広告事業の景気感応度もバリュエーションに織り込む必要がある。"
+      }
+    }
   }
 ];
 // ── END_DATA ──
