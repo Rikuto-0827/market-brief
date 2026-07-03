@@ -711,6 +711,7 @@ const MARKET_REPORTS = [
     /* Events */
     const evHtml=r.events.map(e=>{
       const sk=encodeURIComponent(e.searchKey||e.title.replace(/[^\x00-\x7F]/g,' ').replace(/\s+/g,' ').trim());
+      const skJp=encodeURIComponent(e.title);
       return `
       <div class="ev-item">
         <div class="ev-title">${e.icon}&ensp;${e.title}</div>
@@ -718,7 +719,7 @@ const MARKET_REPORTS = [
         <div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">
           <a href="https://www.wsj.com/search?query=${sk}" target="_blank" class="ev-link ev-link-wsj">📰 WSJ →</a>
           <a href="https://www.ft.com/search?q=${sk}" target="_blank" class="ev-link ev-link-ft">📰 FT →</a>
-          <a href="https://news.google.com/search?q=${sk}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="ev-link ev-link-jp">🇯🇵 日本語ニュース →</a>
+          <a href="https://www.google.com/search?q=${skJp}&tbm=nws" target="_blank" class="ev-link ev-link-jp">🇯🇵 日本語ニュース →</a>
         </div>
       </div>`;
     }).join('');
@@ -726,6 +727,7 @@ const MARKET_REPORTS = [
     /* US deals */
     const usDeals=r.usCredit.deals.map(d=>{
       const sk=encodeURIComponent(d.searchKey||(d.meta?d.meta.split('｜')[0].trim():'private credit'));
+      const skJp=encodeURIComponent(d.title);
       return `
       <div class="deal">
         <div class="deal-tag ${d.tagCls}">${d.tag}</div>
@@ -737,7 +739,7 @@ const MARKET_REPORTS = [
           ${d.url?`<a href="${d.url}" target="_blank" class="deal-link dl-src">🔗 Source</a>`:''}
           <a href="https://www.wsj.com/search?query=${sk}" target="_blank" class="deal-link dl-wsj">📰 WSJ</a>
           <a href="https://www.ft.com/search?q=${sk}" target="_blank" class="deal-link dl-ft">📰 FT</a>
-          <a href="https://news.google.com/search?q=${sk}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="deal-link dl-jp">🇯🇵 日本語ニュース</a>
+          <a href="https://www.google.com/search?q=${skJp}&tbm=nws" target="_blank" class="deal-link dl-jp">🇯🇵 日本語ニュース</a>
         </div>
       </div>`;
     }).join('');
@@ -745,6 +747,7 @@ const MARKET_REPORTS = [
     /* JP deals */
     const jpDeals=r.jpCredit.deals.map(d=>{
       const sk=encodeURIComponent(d.searchKey||(d.meta?d.meta.split('｜')[0].trim():'Japan private equity'));
+      const skJp=encodeURIComponent(d.title);
       return `
       <div class="deal">
         <div class="deal-tag ${d.tagCls}">${d.tag}</div>
@@ -756,7 +759,7 @@ const MARKET_REPORTS = [
           ${d.url?`<a href="${d.url}" target="_blank" class="deal-link dl-src">🔗 Source</a>`:''}
           <a href="https://www.wsj.com/search?query=${sk}" target="_blank" class="deal-link dl-wsj">📰 WSJ</a>
           <a href="https://www.dealstreetasia.com/?s=${sk}" target="_blank" class="deal-link dl-dst">🌏 DealStreet</a>
-          <a href="https://news.google.com/search?q=${sk}&hl=ja&gl=JP&ceid=JP:ja" target="_blank" class="deal-link dl-jp">🇯🇵 日本語ニュース</a>
+          <a href="https://www.google.com/search?q=${skJp}&tbm=nws" target="_blank" class="deal-link dl-jp">🇯🇵 日本語ニュース</a>
         </div>
       </div>`;
     }).join('');
